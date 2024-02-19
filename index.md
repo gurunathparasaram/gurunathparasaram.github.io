@@ -1,21 +1,18 @@
 ---
 layout: page
 title: Welcome
-tags: [umang, bhatt, home, cmu, cambridge, explainability, machine learning, ML, interpretability, artificial intelligence, AI, graduate]
+<!--tags: [umang, bhatt, home, cmu, cambridge, explainability, machine learning, ML, interpretability, artificial intelligence, AI, graduate] -->
 modified: 2014-08-08T20:53:07.573882-04:00
 comments: false
 ---
 
-I am an Assistant Professor and Faculty Fellow at the [Center for Data Science](https://cds.nyu.edu/) at [New York University](https://www.nyu.edu/). I spent my PhD years in the [Machine Learning Group](http://mlg.eng.cam.ac.uk/) at the [University of Cambridge](https://www.cam.ac.uk/), where I was advised by [Adrian Weller](http://mlg.eng.cam.ac.uk/adrian/). Currently, I am also a Research Associate at the [Alan Turing Institute](http://turing.ac.uk/) and an Advisor to the [Responsible AI Institute](https://www.responsible.ai/). My research interests lie in trustworthy machine learning, responsible artificial intelligence, and human-machine collaboration.
-
-My PhD research was funded by the [Leverhulme Center for the Future of Intelligence](http://lcfi.ac.uk/) (Trust and Transparency Initiative) with generous donations from [DeepMind](https://deepmind.com/) and [Leverhulme Trust](https://www.leverhulme.ac.uk/). Previously, I was a Fellow at the [Mozilla Foundation](https://foundation.mozilla.org/en/) and a Research Fellow at the [Partnership on AI](https://www.partnershiponai.org/). I completed a joint bachelors-masters in [Electrical and Computer Engineering](http://www.ece.cmu.edu/) at [Carnegie Mellon University](http://www.cmu.edu/). I grew up in Basking Ridge, New Jersey, USA.
-
+I'm a Master's student in Computer Science at the University of Utah. Before starting my Master’s in Computer Science, I was a Machine Learning engineer focused on building NLP applications at Zoho. I was part of a small team that built a Grammatical Error Correction(GEC) System for text applications, which helped me get involved in various aspects of the Deep Learning pipeline, such as data collection, processing and augmentation, model training and deployment, and using user feedback to improve the model iteratively.
 <!-- , where I worked with [Jos&eacute; Moura](http://users.ece.cmu.edu/~moura/). During four wonderful years in Pittsburgh, I collaborated with [Pradeep Ravikumar](http://www.cs.cmu.edu/~pradeepr/) on explainable AI and [Zico Kolter](http://zicokolter.com/) on automated pothole detection.[Fei Fang](https://feifang.info/) and [Manuela Veloso](https://www.cs.cmu.edu/~mmv/) on robot affect expression in competitive settings, and [Radu Marculescu](http://users.ece.utexas.edu/~radum/) on network science for deep learning.  -->
 
 
 
 ----
-
+<!--
 <h3 align="center">News</h3>
 <table class='news-table'>
     <col width="15%">
@@ -136,3 +133,4 @@ My PhD research was funded by the [Leverhulme Center for the Future of Intellige
         <td>Mozilla<br>2020-2021</td>
     </tr>
 </table> -->
+-->
