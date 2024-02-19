@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Contact
-tags: [umang, bhatt, contact, graduate, cmu, cambridge]
+tags: [guru, parasaram, contact, graduate, utah, uou]
 modified: 2014-08-08T20:53:07.573882-04:00
 comments: false
 ---
 
-umangbhatt [at] nyu [dot] edu
+guru [dot] parasaram [at] utah [dot] edu
