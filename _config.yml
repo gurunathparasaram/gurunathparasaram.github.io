@@ -23,28 +23,28 @@ kramdown:
 
 # Site owner
 owner:
-  name: Umang Bhatt
+  name: Gurunath Parasaram
   avatar: bio.jpg
-  position: Assistant Professor & Faculty Fellow
-  school: New York University
+  position: Masters Student Computer Science
+  school: University of Utah
   place: #
-  bio: "Faculty Fellow, New York University"
-  email: umangbhatt@nyu.edu
+  bio: "Utah NLP"
+  email: guru.parasaram@utah.edu
   disqus-shortname:
 
-  twitter: umangsbhatt #username
+  twitter:  #username
   facebook: #username
   google:
     plus: 
-    analytics: UA-134194584-1
+    analytics: 
     verify:
     ad-client:
     ad-slot:
   bing-verify:
-  googlescholar: "https://scholar.google.com/citations?user=qq8bxPkAAAAJ&hl=en"
-  github: umangsbhatt
+  googlescholar: "https://scholar.google.com/citations?user=tqS7ZN8AAAAJ&hl=en"
+  github: gurunathparasaram
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
-  linkedin: umangsbhatt #username
+  linkedin: pgurunath #username
   xing: #username
   instagram: #username
   lastfm: #username
