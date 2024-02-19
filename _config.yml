@@ -1,8 +1,8 @@
 # Site wide configuration
 
-title: Umang Bhatt         
+title: Gurunath Parasaram 
 locale: en_US
-url: https://umangsbhatt.github.io
+url: https://gurunathparasaram.github.io
 # Jekyll configuration
 
 permalink:   /:categories/:title/
@@ -24,7 +24,7 @@ kramdown:
 # Site owner
 owner:
   name: Gurunath Parasaram
-  avatar: bio.jpg
+  avatar: 
   position: Masters Student Computer Science
   school: University of Utah
   place: #
