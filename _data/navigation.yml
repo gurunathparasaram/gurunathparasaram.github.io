@@ -5,9 +5,12 @@
 
 - title: Research
   url: /
+  #url: /research/
+  
   
 - title: CV
   url: /reports/guru.pdf
+  #url: /reports/guru.pdf
 
 - title: Contact
   url: /contact/
