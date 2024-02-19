@@ -10,8 +10,6 @@ I'm a Master's student in Computer Science at the University of Utah. Before sta
 <!-- , where I worked with [Jos&eacute; Moura](http://users.ece.cmu.edu/~moura/). During four wonderful years in Pittsburgh, I collaborated with [Pradeep Ravikumar](http://www.cs.cmu.edu/~pradeepr/) on explainable AI and [Zico Kolter](http://zicokolter.com/) on automated pothole detection.[Fei Fang](https://feifang.info/) and [Manuela Veloso](https://www.cs.cmu.edu/~mmv/) on robot affect expression in competitive settings, and [Radu Marculescu](http://users.ece.utexas.edu/~radum/) on network science for deep learning.  -->
 
 
-
-----
 <!--
 <h3 align="center">News</h3>
 <table class='news-table'>
@@ -88,7 +86,6 @@ I'm a Master's student in Computer Science at the University of Utah. Before sta
         <td>Finished my BS and MS at <a href="http://www.cmu.edu/">Carnegie Mellon</a> &#127891;
         </td>
     </tr>
-</table>
 
 <!-- ----
 
@@ -133,4 +130,3 @@ I'm a Master's student in Computer Science at the University of Utah. Before sta
         <td>Mozilla<br>2020-2021</td>
     </tr>
 </table> -->
--->
