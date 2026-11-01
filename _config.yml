@@ -3,6 +3,12 @@
 title: Gurunath Parasaram 
 locale: en_US
 url: https://gurunathparasaram.github.io
+
+# TODO: Paste the Google Drive share link to your resume PDF here, e.g.
+#   resume_url: "https://drive.google.com/file/d/<FILE_ID>/view?usp=sharing"
+# (In Drive: Share -> General access -> "Anyone with the link" -> Viewer.)
+# While this is empty, the Resume page shows a "coming soon" placeholder.
+resume_url: ""
 # Jekyll configuration
 
 permalink:   /:categories/:title/
