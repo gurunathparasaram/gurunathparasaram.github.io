@@ -202,6 +202,8 @@ html:not([data-mode="game"]) .game-only, .no-js .game-only { display: none !impo
 .news-item { display: grid; grid-template-columns: 6.5rem 1fr; gap: .25rem 1rem; padding: .7rem 0; border-bottom: 1px dashed var(--line); }
 .news-item time { font: 600 .85rem var(--font-mono); color: var(--warm); padding-top: .15rem; }
 .news-item p { margin: 0; }
+.news-source { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: .05em .5em; margin-right: .3rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent); vertical-align: .1em; }
+.news-empty { padding: 1rem 1.25rem; margin: 0; }
 @media (max-width: 520px) { .news-item { grid-template-columns: 1fr; } }
 
 /* ---------- Posts ---------- */
@@ -262,11 +264,17 @@ html:not([data-mode="game"]) .game-only, .no-js .game-only { display: none !impo
 .place h3 .icon { color: var(--warm); }
 .place-country { font-weight: 400; color: var(--muted); }
 
-.shelves { display: grid; gap: 0 2rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
-.shelves .section-title { margin-top: 1rem; }
-.books { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
+.shelves { display: grid; gap: .75rem; }
+
+.books { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); }
 .book { display: grid; grid-template-columns: 12px 1fr; gap: 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1rem 1rem .75rem; }
-.book h3 { font-size: 1.05rem; margin-bottom: .15rem; }
+.book-title { font-weight: 700; font-size: 1.02rem; }
+.shelf-title { font: 600 1rem var(--font-body); margin: .5rem 0 .6rem; display: flex; gap: .5rem; align-items: baseline; }
+.shelf-title .count, .article-group .count { font: 600 .75rem var(--font-body); color: var(--muted); background: var(--surface-2); border-radius: 999px; padding: .1em .6em; }
+.article-groups { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); }
+.article-group h3 { font-size: 1.1rem; display: flex; gap: .5rem; align-items: baseline; }
+.articles { margin: 0; padding-left: 1.1rem; display: grid; gap: .35rem; }
+.articles .muted { font-size: .85rem; }
 .book p { margin: 0 0 .25rem; }
 .book-author { color: var(--muted); font-size: .92rem; }
 .book-spine { border-radius: 4px; background: var(--accent); }
@@ -349,7 +357,7 @@ html:not([data-mode="game"]) .game-only, .no-js .game-only { display: none !impo
 .quest-trail { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
 .trail-bg { fill: none; stroke: var(--trail); stroke-width: 10; stroke-linecap: round; opacity: .25; }
 .trail-fg { fill: none; stroke: var(--trail); stroke-width: 3; stroke-dasharray: 2 10; stroke-linecap: round; }
-.quest-nodes { position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, 1fr); gap: .5rem; }
+.quest-nodes { position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: .5rem; }
 .quest-node:nth-child(even) { transform: translateY(3.75rem); }
 .quest-link { display: flex; flex-direction: column; align-items: center; text-align: center; gap: .4rem; text-decoration: none; color: var(--ink); border-radius: 10px; padding: .25rem; }
 .quest-orb { position: relative; display: grid; place-items: center; width: 3.6rem; height: 3.6rem; border-radius: 50%; background: var(--surface); border: 3px solid var(--edge); box-shadow: 3px 3px 0 var(--edge); color: var(--accent); transition: transform .15s ease; }
@@ -376,7 +384,7 @@ html:not([data-mode="game"]) .game-only, .no-js .game-only { display: none !impo
 
 @media (max-width: 720px) {
   .quest { padding: 2.75rem 0 1rem; }
-  .quest-nodes { grid-template-columns: 1fr; gap: .9rem; }
+  .quest-nodes { grid-auto-flow: row; grid-template-columns: 1fr; gap: .9rem; }
   .quest-node, .quest-node:nth-child(even) { transform: none; }
   .quest-node:nth-child(odd) { padding-right: 34%; }
   .quest-node:nth-child(even) { padding-left: 34%; }

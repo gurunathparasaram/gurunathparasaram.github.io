@@ -1,11 +1,9 @@
-# News / Updates on the Home page, newest first.
-#   date: YYYY, YYYY-MM or YYYY-MM-DD (shown as written)
-#   text: one or two sentences (Markdown allowed)
-#   link: optional URL; link_text: optional label for it (default "Read more")
-# The box scrolls on its own once the list is taller than the box.
-- date: 2026-11
-  text: Redesigned this website. It now has a plain mode and a game mode.
-- date: 2024-08
-  text: Graduated with an MS in Computing (AI) from the University of Utah.
-- date: 2022-08
-  text: Started the MS in Computing (AI) at the University of Utah.
+# News / Updates on the Home page. Blog posts are added automatically.
+# Add other updates here by hand (LinkedIn posts, talks, ...), any order:
+#
+# - date: 2026-12-03          # YYYY-MM-DD (or YYYY-MM / YYYY), shown as written
+#   source: LinkedIn          # optional small label: LinkedIn, Talk, Podcast, ...
+#   text: Wrote about evaluating LLM agents with golden datasets.
+#   link: https://www.linkedin.com/posts/...
+#   link_text: Read on LinkedIn   # optional, default "Read more"
+[]

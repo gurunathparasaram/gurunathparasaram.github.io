@@ -8,13 +8,12 @@
     </a>
     <nav class="site-nav" aria-label="Main">
       <ul>
-        {%- assign items = "Home|/,CV|/cv/,Blog|/blog/,Life|/life/" | split: "," -%}
-        {%- for it in items -%}
-          {%- assign parts = it | split: "|" -%}
+        {%- assign nav_levels = site.data.levels | where: "nav", true -%}
+        {%- for l in nav_levels -%}
           {%- assign is_current = false -%}
-          {%- if parts[1] == "/" and nav_url == "/" -%}{%- assign is_current = true -%}
-          {%- elsif parts[1] != "/" and nav_url contains parts[1] -%}{%- assign is_current = true -%}{%- endif -%}
-          <li><a href="{{ parts[1] | relative_url }}"{% if is_current %} aria-current="page"{% endif %}>{{ parts[0] }}</a></li>
+          {%- if l.url == "/" and nav_url == "/" -%}{%- assign is_current = true -%}
+          {%- elsif l.url != "/" and nav_url contains l.url -%}{%- assign is_current = true -%}{%- endif -%}
+          <li><a href="{{ l.url | relative_url }}"{% if is_current %} aria-current="page"{% endif %}>{{ l.title }}</a></li>
         {%- endfor -%}
       </ul>
     </nav>

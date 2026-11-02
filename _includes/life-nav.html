@@ -1,8 +1,9 @@
 <nav class="subnav" aria-label="Life">
   <ul>
-    {%- assign subs = "Overview|/life/,Travel|/life/travel/,Reading|/life/reading/,Telugu|/life/telugu/,Feed|/life/feed/" | split: "," -%}
-    {%- for s in subs -%}{%- assign parts = s | split: "|" -%}
-    <li><a href="{{ parts[1] | relative_url }}"{% if page.url == parts[1] %} aria-current="page"{% endif %}>{{ parts[0] }}</a></li>
-    {%- endfor -%}
+    <li><a href="{{ '/life/' | relative_url }}"{% if page.url == "/life/" %} aria-current="page"{% endif %}>Overview</a></li>
+    {%- assign subs = site.data.levels | where: "parent", "life" -%}
+    {%- for l in subs %}
+    <li><a href="{{ l.url | relative_url }}"{% if page.url == l.url %} aria-current="page"{% endif %}>{{ l.title }}</a></li>
+    {%- endfor %}
   </ul>
 </nav>

@@ -3,32 +3,33 @@ layout: default
 title: Reading
 level: reading
 ---
-{%- assign books = site.data.reading -%}
+{%- assign r = site.data.reading -%}
 <h1 class="page-title">Reading</h1>
 {% include life-nav.html %}
-<p class="lede">Books I am reading, have read, or want to read.</p>
-{%- assign groups = "reading|Reading now,read|Read,want|Want to read" | split: "," -%}
-<div class="shelves">
-{%- for g in groups -%}
-  {%- assign parts = g | split: "|" -%}
-  {%- assign shelf = books | where: "status", parts[0] -%}
-  <section class="shelf shelf-{{ parts[0] }}" aria-labelledby="shelf-{{ parts[0] }}">
-    <h2 id="shelf-{{ parts[0] }}" class="section-title">{{ parts[1] }} <span class="count">{{ shelf.size }}</span></h2>
-    {%- if shelf.size == 0 %}<p class="muted">Nothing here yet.</p>{% else %}
-    <ul class="books">
-      {%- for b in shelf %}
-      <li class="book">
-        <span class="book-spine" aria-hidden="true"></span>
-        <div>
-          <h3>{% if b.link %}<a href="{{ b.link }}">{{ b.title }}</a>{% else %}{{ b.title }}{% endif %}</h3>
-          <p class="book-author">{{ b.author }}{% if b.year %} · {{ b.year }}{% endif %}</p>
-          {%- if b.note %}<p>{{ b.note | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>{% endif %}
-          {%- if b.sample %}<p><span class="badge">Sample entry</span></p>{% endif %}
-        </div>
-      </li>
-      {%- endfor %}
-    </ul>
-    {%- endif %}
-  </section>
-{%- endfor -%}
-</div>
+<p class="lede">Books and technical writing I am reading or have read.</p>
+
+<section aria-labelledby="fiction-title">
+  <h2 id="fiction-title" class="section-title">Fiction</h2>
+  {%- if r.fiction.size > 0 %}{% include bookshelf.html books=r.fiction %}{% else %}<p class="muted">Nothing here yet.</p>{% endif %}
+</section>
+
+<section aria-labelledby="nonfiction-title">
+  <h2 id="nonfiction-title" class="section-title">Non-fiction</h2>
+  {%- if r.nonfiction.size > 0 %}{% include bookshelf.html books=r.nonfiction %}{% else %}<p class="muted">Nothing here yet.</p>{% endif %}
+</section>
+
+<section aria-labelledby="articles-title">
+  <h2 id="articles-title" class="section-title">Technical articles and blogs</h2>
+  <div class="article-groups">
+  {%- for src in r.articles %}
+    <div class="article-group card">
+      <h3><a href="{{ src.url }}">{{ src.source }}</a> <span class="count">{{ src.items.size }}</span></h3>
+      <ul class="articles">
+        {%- for a in src.items %}
+        <li><a href="{{ a.url }}">{{ a.title }}</a>{% if a.year %} <span class="muted">{{ a.year }}</span>{% endif %}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+  {%- endfor %}
+  </div>
+</section>
