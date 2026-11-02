@@ -1,0 +1,9 @@
+# Selected X posts for Life > Feed, newest first.
+# These show for every visitor, even when X's live timeline embed is blocked.
+# Paste the post's link from X (Share > Copy link). `text` is shown until the
+# embed loads, and if it never does, so paste the post's text there too.
+#
+# - url: https://x.com/guru__nath/status/1234567890123456789
+#   date: 2026-11-02
+#   text: Short copy of the post text.
+[]

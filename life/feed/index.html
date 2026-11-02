@@ -4,18 +4,37 @@ title: Feed
 level: feed
 ---
 {%- assign h = site.twitter_handle | strip | remove: "@" -%}
+{%- assign picks = site.data.x_posts -%}
 <h1 class="page-title">Feed</h1>
 {% include life-nav.html %}
 {%- if h == "" %}
 <p class="lede">A feed of my posts on X will appear here.</p>
-<p class="muted">In the meantime, the <a href="{{ '/blog/' | relative_url }}">blog</a> and the news on the <a href="{{ '/' | relative_url }}#contact">home page</a> have the latest updates.</p>
 {%- else %}
 <p class="lede">Short posts and links I share on X.</p>
 <p><a class="btn btn-primary" href="https://x.com/{{ h }}" rel="me noopener">{% include icon.html name="external" %}Follow @{{ h }} on X</a></p>
-<div class="feed-embed" data-handle="{{ h }}">
-  <button type="button" class="btn" data-load-feed hidden>{% include icon.html name="bubble" %}Show recent posts here</button>
-  <p class="muted small">Loading the embedded feed contacts x.com, which may set cookies. If it does not load, the link above always works.</p>
-  <div class="feed-slot"></div>
-  <p class="feed-fallback" hidden role="status">The embedded feed did not load. It may be blocked by your browser or by X. <a href="https://x.com/{{ h }}" rel="noopener">View posts on X</a>.</p>
-</div>
+
+{%- if picks and picks.size > 0 %}
+<section aria-labelledby="picks-title" class="x-picks">
+  <h2 id="picks-title" class="section-title">Selected posts</h2>
+  <ul class="x-pick-list">
+    {%- for p in picks %}
+    <li>
+      <blockquote class="twitter-tweet" data-dnt="true">
+        {%- if p.text %}<p>{{ p.text }}</p>{% endif %}
+        <p>— @{{ h }} <a href="{{ p.url | replace: 'https://x.com/', 'https://twitter.com/' }}">{{ p.date | default: "View on X" }}</a></p>
+      </blockquote>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}
+
+<section aria-labelledby="live-title" class="feed-embed" data-handle="{{ h }}">
+  <h2 id="live-title" class="section-title">Latest posts</h2>
+  <div class="feed-slot">
+    <a class="twitter-timeline" data-height="700" data-dnt="true" href="https://twitter.com/{{ h }}">Posts by @{{ h }}</a>
+  </div>
+  <p class="muted small">This list is X's live embed. If you are not signed in to X, or your browser blocks X, it may show nothing. The link above always works.</p>
+  <p class="feed-fallback" hidden role="status">The live feed did not load here. <a href="https://x.com/{{ h }}" rel="noopener">See the latest posts on X</a>.</p>
+</section>
 {%- endif %}

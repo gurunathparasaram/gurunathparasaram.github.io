@@ -314,32 +314,25 @@
   }
   if (mode() === 'game') initGame();
 
-  /* ---------------- X / Twitter feed ---------------- */
-  $all('.feed-embed').forEach(function (box) {
-    var btn = box.querySelector('[data-load-feed]');
-    var slot = box.querySelector('.feed-slot');
-    var fallback = box.querySelector('.feed-fallback');
-    var handle = box.getAttribute('data-handle');
-    if (!btn || !slot || !handle) return;
-    btn.hidden = false;
-    btn.addEventListener('click', function () {
-      btn.disabled = true;
-      var a = document.createElement('a');
-      a.className = 'twitter-timeline';
-      a.href = 'https://twitter.com/' + encodeURIComponent(handle);
-      a.setAttribute('data-height', '600');
-      a.setAttribute('data-dnt', 'true');
-      a.setAttribute('data-theme', resolvedTheme());
-      a.textContent = 'Posts by @' + handle;
-      slot.appendChild(a);
-      var fail = function () { if (!slot.querySelector('iframe')) { fallback.hidden = false; btn.hidden = true; } };
-      var s = document.createElement('script');
-      s.src = 'https://platform.twitter.com/widgets.js';
-      s.async = true;
-      s.charset = 'utf-8';
-      s.onerror = fail;
-      document.body.appendChild(s);
-      setTimeout(fail, 8000);
-    });
-  });
+  /* ---------------- X / Twitter feed ----------------
+     Loads X's widget script on the Feed page. It turns the timeline link and
+     any selected-post blockquotes into embeds. If the script is blocked, the
+     links and post text stay as they are and a short note appears. */
+  var feedBox = document.querySelector('.feed-embed');
+  if (feedBox || document.querySelector('blockquote.twitter-tweet')) {
+    var tl = document.querySelector('.twitter-timeline');
+    if (tl) tl.setAttribute('data-theme', resolvedTheme());
+    var fallback = document.querySelector('.feed-fallback');
+    var showFallback = function () {
+      var slot = feedBox && feedBox.querySelector('.feed-slot');
+      if (fallback && slot && !slot.querySelector('iframe')) fallback.hidden = false;
+    };
+    var s = document.createElement('script');
+    s.src = 'https://platform.twitter.com/widgets.js';
+    s.async = true;
+    s.charset = 'utf-8';
+    s.onerror = showFallback;
+    document.body.appendChild(s);
+    setTimeout(showFallback, 10000);
+  }
 })();

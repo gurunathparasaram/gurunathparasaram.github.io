@@ -14,7 +14,7 @@ Humans: see `README.md`. This file is excluded from the site build.
 - Plain and game mode must show the same pages and content. Add pages through `_data/levels.yml`; never add content that only one mode shows.
 
 ## Where content lives
-- `_data/profile.yml` (summary, links, numbers), `_data/cv.yml`, `_data/news.yml`, `_data/travel.yml`, `_data/reading.yml`, `_data/telugu.yml`, `_data/levels.yml` (game mode).
+- `_data/profile.yml` (summary, links, numbers), `_data/cv.yml`, `_data/news.yml`, `_data/travel.yml`, `_data/reading.yml`, `_data/telugu.yml`, `_data/x_posts.yml` (selected X posts), `_data/levels.yml` (page list for both modes).
 - Blog posts: `_posts/`.
 - One stylesheet (`assets/css/site.css`) and one script (`assets/js/site.js`). No build step and no npm.
 

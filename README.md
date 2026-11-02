@@ -97,8 +97,19 @@ Each role in `_data/cv.yml` has a 1-3 sentence `summary` and a one-line `stack`.
 ### Add the CV PDF
 Export the PDF from Overleaf and save it as **`assets/cv.pdf`**, replacing the one-page placeholder that is there now. The "Download PDF" buttons on Home and CV already point to it.
 
-### Set the Twitter / X handle
-In `_config.yml`, set `twitter_handle: yourhandle` (no `@`). Until then, Life › Feed shows a short note. Once it is set, the page shows a "Follow on X" link plus a button that loads X's official timeline embed on demand. If the embed is blocked or does not load within 8 seconds, a message with the link to X appears instead.
+### X (Twitter) feed
+The handle is set in `_config.yml` (`twitter_handle: "guru__nath"`, without the `@`). Life › Feed then shows:
+
+1. **Selected posts** from `_data/x_posts.yml`. These show for every visitor. Paste a post's link (Share › Copy link on X) plus its date and text:
+   ```yaml
+   - url: https://x.com/guru__nath/status/1234567890123456789
+     date: 2026-11-02
+     text: Short copy of the post text.
+   ```
+   X's script turns each one into a full embedded post. If X is blocked, the text and link still show.
+2. **Latest posts**: X's official profile timeline, loaded automatically. It updates by itself, but X often shows it empty to visitors who are not signed in to X or who block X's cookies. When the script cannot load at all, a link to your profile appears instead.
+
+Fully automatic posts for every visitor would need the X API, which is pay-per-use (no free tier for new developers since 2026). A scheduled GitHub Action could fetch your latest posts into `_data/x_posts.yml` once a day using an API token stored as a repository secret.
 
 ### Add or reorder pages (both modes)
 `_data/levels.yml` is the single list of pages. Plain mode builds its header nav (`nav: true`), the Life sub-nav and the Life cards (`parent: life`) from it, and game mode builds the quest map from the same list, so the two modes always show the same sections and content. Each page names its entry with `level: <id>` in its front matter. Icons are defined in `_includes/icon.html`.
