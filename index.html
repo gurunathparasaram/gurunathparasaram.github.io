@@ -1,0 +1,75 @@
+---
+layout: default
+level: home
+redirect_from:
+  - /contact/
+  - /aboutme/
+---
+{%- assign p = site.data.profile -%}
+<div class="game-only start-screen">
+  <p class="pixel start-kicker">Gurunath's quest</p>
+  <p class="start-text">{{ site.data.levels | size }} levels. Each one opens a part of this site. Pick a level on the map, or scroll down to play level 1.</p>
+  {% include quest-map.html id="quest-home" %}
+</div>
+
+<div class="home-grid">
+  <section class="hero" aria-labelledby="hero-name">
+    <img class="hero-photo" src="{{ p.photo | relative_url }}" alt="{{ p.photo_alt }}" width="250" height="320">
+    <div class="hero-text">
+      <p class="eyebrow">{{ p.role }} · {{ p.location }}</p>
+      <h1 id="hero-name" class="hero-name">{{ p.name }}</h1>
+      <p class="hero-summary">{{ p.summary }}</p>
+      {%- if p.availability != "" %}<p class="availability">{{ p.availability }}</p>{% endif %}
+      <p class="hero-actions">
+        <a class="btn btn-primary" href="{{ '/cv/' | relative_url }}">{% include icon.html name="scroll" %}View CV</a>
+        <a class="btn" href="{{ '/assets/cv.pdf' | relative_url }}">{% include icon.html name="download" %}PDF</a>
+        <a class="btn" href="#contact" data-email-btn>{% include icon.html name="mail" %}Email</a>
+        {%- for l in p.links %}
+        <a class="btn btn-quiet" href="{{ l.url }}" rel="me noopener">{% include icon.html name=l.icon %}{{ l.label }}</a>
+        {%- endfor %}
+      </p>
+    </div>
+  </section>
+
+  {% include telugu-panel.html %}
+
+  <section class="stats" aria-label="Highlights in numbers">
+    <ul class="focus" aria-label="Focus areas">
+      {%- for f in p.focus %}<li>{{ f }}</li>{% endfor %}
+    </ul>
+    <ul>
+      {%- for s in p.stats %}
+      <li><span class="stat-value">{{ s.value }}</span><span class="stat-label">{{ s.label }}</span></li>
+      {%- endfor %}
+    </ul>
+  </section>
+
+  <section class="work" aria-labelledby="work-title">
+    <h2 id="work-title" class="section-title">Selected work</h2>
+    <ul class="cards">
+      {%- for h in site.data.cv.highlights %}
+      <li class="card">
+        <h3>{{ h.title }}</h3>
+        <p class="card-where">{{ h.where }}</p>
+        <p>{{ h.text }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+    <p><a href="{{ '/cv/' | relative_url }}">Full experience on the CV page →</a></p>
+  </section>
+
+  {%- if site.posts.size > 0 %}
+  <section class="latest" aria-labelledby="latest-title">
+    <h2 id="latest-title" class="section-title">Latest writing</h2>
+    <ul class="post-list compact">
+      {%- for post in site.posts limit: 3 %}
+      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %Y" }}</time></li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+
+  <div class="news-wrap" id="contact">
+    {% include news.html %}
+  </div>
+</div>

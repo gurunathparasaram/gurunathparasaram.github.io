@@ -1,0 +1,13 @@
+<aside class="telugu-panel" aria-labelledby="telugu-panel-title">
+  <div class="kolam" aria-hidden="true"></div>
+  <h2 id="telugu-panel-title" class="panel-kicker">Welcome · <span lang="te">స్వాగతం</span></h2>
+  <ul class="te-lines">
+    {%- for line in site.data.telugu.welcome -%}
+    <li>
+      <p class="te" lang="te">{{ line.te }}</p>
+      <p class="gloss"><span class="rom" lang="te-Latn">{{ line.rom }}</span> <span class="en">{{ line.en }}</span></p>
+    </li>
+    {%- endfor -%}
+  </ul>
+  <a class="panel-more" href="{{ '/life/telugu/' | relative_url }}">More Telugu phrases →</a>
+</aside>

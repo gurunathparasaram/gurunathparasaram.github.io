@@ -1,0 +1,8 @@
+<dialog class="map-dialog game-only" id="map-dialog" aria-labelledby="map-dialog-title">
+  <div class="map-dialog-head">
+    <h2 id="map-dialog-title" class="pixel">Quest map</h2>
+    <button type="button" class="icon-btn" data-close-map aria-label="Close map">✕</button>
+  </div>
+  {% include quest-map.html id="quest-dialog" %}
+  <p class="map-dialog-foot"><button type="button" class="link-btn" data-set-mode="plain">Exit to plain mode</button></p>
+</dialog>

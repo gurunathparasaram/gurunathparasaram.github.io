@@ -1,0 +1,19 @@
+# Places for Life > Travel. Newest first.
+#   name, country: shown on the card
+#   lat, lon: decimal degrees (find them on any map; west/south are negative)
+#   when: free text, e.g. "2024" or "Mar 2025"
+#   note: optional one-liner (Markdown allowed)
+#   photo: optional path, e.g. /assets/img/travel/chicago.jpg (keep under ~300 KB)
+#   photo_alt: required when photo is set
+- name: Chicago
+  country: USA
+  lat: 41.88
+  lon: -87.63
+  when: 2025 – present
+  note: Home base.
+- name: Salt Lake City
+  country: USA
+  lat: 40.76
+  lon: -111.89
+  when: 2022 – 2024
+  note: Grad school at the University of Utah.

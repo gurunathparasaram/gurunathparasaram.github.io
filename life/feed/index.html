@@ -1,0 +1,21 @@
+---
+layout: default
+title: Feed
+level: feed
+---
+{%- assign h = site.twitter_handle | strip | remove: "@" -%}
+<h1 class="page-title">Feed</h1>
+{% include life-nav.html %}
+{%- if h == "" %}
+<p class="lede">A feed of my posts on X will appear here.</p>
+<p class="muted">In the meantime, the <a href="{{ '/blog/' | relative_url }}">blog</a> and the news on the <a href="{{ '/' | relative_url }}#contact">home page</a> have the latest updates.</p>
+{%- else %}
+<p class="lede">Short posts and links I share on X.</p>
+<p><a class="btn btn-primary" href="https://x.com/{{ h }}" rel="me noopener">{% include icon.html name="external" %}Follow @{{ h }} on X</a></p>
+<div class="feed-embed" data-handle="{{ h }}">
+  <button type="button" class="btn" data-load-feed hidden>{% include icon.html name="bubble" %}Show recent posts here</button>
+  <p class="muted small">Loading the embedded feed contacts x.com, which may set cookies. If it does not load, the link above always works.</p>
+  <div class="feed-slot"></div>
+  <p class="feed-fallback" hidden role="status">The embedded feed did not load. It may be blocked by your browser or by X. <a href="https://x.com/{{ h }}" rel="noopener">View posts on X</a>.</p>
+</div>
+{%- endif %}

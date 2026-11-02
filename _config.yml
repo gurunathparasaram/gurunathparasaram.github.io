@@ -1,64 +1,52 @@
-# Site wide configuration
-
-title: Gurunath Parasaram 
-locale: en_US
+# ------------------------------------------------------------------
+# Site settings. Restart `bundle exec jekyll serve` after editing.
+# ------------------------------------------------------------------
+title: Gurunath Parasaram
+description: AI Engineer in Chicago. Production ML and LLM systems, agentic AI, healthcare AI.
 url: https://gurunathparasaram.github.io
-# Jekyll configuration
-
-permalink:   /:categories/:title/
-markdown:    kramdown
-highlighter: rouge
-sass:
-  sass_dir: _sass
-  style: compressed
-gems:
-  - jekyll-sitemap
-
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  use_coderay: false
-
-# Site owner
-owner:
+baseurl: ""
+lang: en
+theme: null  # no gem theme; all layouts live in this repo
+author:
   name: Gurunath Parasaram
-  avatar: bio.jpg
-  position: Masters Student Computer Science
-  school: University of Utah
-  place: #
-  bio: "Utah NLP"
-  email: guru.parasaram@utah.edu
-  disqus-shortname:
 
-  twitter:  #username
-  facebook: #username
-  google:
-    plus: 
-    analytics: 
-    verify:
-    ad-client:
-    ad-slot:
-  bing-verify:
-  googlescholar: "https://scholar.google.com/citations?user=tqS7ZN8AAAAJ&hl=en"
-  github: gurunathparasaram
-  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
-  linkedin: pgurunath #username
-  xing: #username
-  instagram: #username
-  lastfm: #username
-  tumblr: #username
-  pinterest: #username
-  foursquare: #username
-  steam: #username
-  dribbble: #username
-  youtube: #username
-  soundcloud: #username
-  weibo: #username
-  flickr: #username
-  codepen: #username
-  scholar: #username
+# Twitter / X handle WITHOUT the "@" (for example: gurunath). Leave empty
+# until you have one: the Life > Feed page then shows a short note instead.
+twitter_handle: ""
 
-include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
+# Show the travel world map (self-hosted SVG, no third-party requests).
+travel_map: true
+
+# Mode used on a visitor's first visit: "plain" or "game".
+default_mode: plain
+
+# ------------------------------------------------------------------
+# Jekyll / GitHub Pages
+# ------------------------------------------------------------------
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+permalink: /blog/:year/:month/:day/:title/
+timezone: America/Chicago
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+feed:
+  path: blog/feed.xml
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post, level: blog }
+
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules

@@ -1,0 +1,19 @@
+# Books for Life > Reading.
+#   status: reading | read | want
+#   title, author: required
+#   year: optional (year you finished it)
+#   note: optional one-liner (Markdown allowed)
+#   link: optional URL
+#   sample: true marks a placeholder entry. Replace or delete these.
+- title: AI Engineering
+  author: Chip Huyen
+  status: reading
+  sample: true
+- title: Designing Machine Learning Systems
+  author: Chip Huyen
+  status: read
+  sample: true
+- title: Speech and Language Processing
+  author: Daniel Jurafsky and James H. Martin
+  status: want
+  sample: true

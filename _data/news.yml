@@ -1,0 +1,20 @@
+# News / Updates on the Home page, newest first.
+#   date: YYYY, YYYY-MM or YYYY-MM-DD (shown as written)
+#   text: one or two sentences (Markdown allowed)
+#   link: optional URL; link_text: optional label for it (default "Read more")
+- date: 2026-11
+  text: Redesigned this website. It now has a plain mode and a game mode.
+- date: "2026"
+  text: Leading agentic AI for healthcare payment integrity at Tiger Analytics.
+- date: 2025-02
+  text: Joined Tiger Analytics as Data Scientist (AI Engineer).
+- date: 2024-09
+  text: Joined EXL as Lead Assistant Manager (Senior Data Scientist).
+- date: 2024-08
+  text: Graduated with an MS in Computing (AI) from the University of Utah.
+- date: 2022-08
+  text: Started the MS in Computing (AI) at the University of Utah.
+- date: 2018-06
+  text: Joined Zoho as Member Technical Staff to work on grammatical error correction.
+  link: https://www.zoho.com/writer/ai-writing-assistant.html
+  link_text: About the product

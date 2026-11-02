@@ -1,0 +1,35 @@
+{%- assign nav_url = page.url -%}
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand-mark" aria-hidden="true">GP</span>
+      <span class="brand-name">Gurunath Parasaram</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        {%- assign items = "Home|/,CV|/cv/,Blog|/blog/,Life|/life/" | split: "," -%}
+        {%- for it in items -%}
+          {%- assign parts = it | split: "|" -%}
+          {%- assign is_current = false -%}
+          {%- if parts[1] == "/" and nav_url == "/" -%}{%- assign is_current = true -%}
+          {%- elsif parts[1] != "/" and nav_url contains parts[1] -%}{%- assign is_current = true -%}{%- endif -%}
+          <li><a href="{{ parts[1] | relative_url }}"{% if is_current %} aria-current="page"{% endif %}>{{ parts[0] }}</a></li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+    <div class="controls">
+      <div class="mode-switch" role="group" aria-label="Site mode">
+        <button type="button" class="mode-btn" data-set-mode="plain" aria-pressed="true">
+          {% include icon.html name="page" %}<span>Plain</span>
+        </button>
+        <button type="button" class="mode-btn" data-set-mode="game" aria-pressed="false">
+          {% include icon.html name="pad" %}<span>Game</span>
+        </button>
+      </div>
+      <button type="button" class="icon-btn theme-btn" data-theme-toggle aria-label="Switch to dark theme">
+        <span class="theme-sun">{% include icon.html name="sun" %}</span><span class="theme-moon">{% include icon.html name="moon" %}</span>
+      </button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,43 @@
+# Telugu content. `te` is Telugu script, `rom` a romanization, `en` the English gloss.
+
+# Home page side panel.
+welcome:
+  - te: "నమస్కారం! నా పేరు గురునాథ్."
+    rom: "Namaskāram! Nā pēru Gurunāth."
+    en: "Hello! My name is Gurunath."
+  - te: "నేను చికాగోలో ఉంటాను."
+    rom: "Nēnu Cikāgōlō uṇṭānu."
+    en: "I live in Chicago."
+  - te: "మీకు స్వాగతం!"
+    rom: "Mīku svāgatam!"
+    en: "Welcome!"
+
+# Life > Telugu: everyday phrases.
+phrases:
+  - te: "నమస్కారం"
+    rom: "namaskāram"
+    en: "Hello (respectful greeting)"
+  - te: "మీరు ఎలా ఉన్నారు?"
+    rom: "mīru elā unnāru?"
+    en: "How are you? (polite)"
+  - te: "నేను బాగున్నాను."
+    rom: "nēnu bāgunnānu."
+    en: "I am fine."
+  - te: "మీ పేరు ఏమిటి?"
+    rom: "mī pēru ēmiṭi?"
+    en: "What is your name?"
+  - te: "ధన్యవాదాలు"
+    rom: "dhanyavādālu"
+    en: "Thank you"
+  - te: "మళ్ళీ కలుద్దాం."
+    rom: "maḷḷī kaluddām."
+    en: "See you again."
+
+# Life > Telugu: learning notes, newest first. `body` is Markdown.
+notes:
+  - title: How the script works
+    date: 2026-11
+    body: >-
+      Telugu is written in its own script. It is an abugida: each consonant
+      letter carries an inherent vowel, and other vowels are written as signs
+      attached to the consonant. For example, క is *ka*, కి is *ki* and కు is *ku*.

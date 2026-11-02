@@ -1,5 +1,5 @@
 source "https://rubygems.org"
 
-gem 'jekyll', '2.5.3'
-gem 'jekyll-sitemap'
-gem 'octopress', '~> 3.0'
+# Matches the versions GitHub Pages uses to build the site.
+gem "github-pages", group: :jekyll_plugins
+gem "webrick" # needed for `jekyll serve` on Ruby 3+
