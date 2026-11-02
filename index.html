@@ -21,8 +21,8 @@ redirect_from:
       <p class="hero-summary">{{ p.summary }}</p>
       {%- if p.availability != "" %}<p class="availability">{{ p.availability }}</p>{% endif %}
       <p class="hero-actions">
-        <a class="btn btn-primary" href="{{ '/cv/' | relative_url }}">{% include icon.html name="scroll" %}View CV</a>
-        <a class="btn" href="{{ '/assets/cv.pdf' | relative_url }}">{% include icon.html name="download" %}PDF</a>
+        <a class="btn btn-primary" href="{{ '/experience/' | relative_url }}">{% include icon.html name="scroll" %}Experience</a>
+        <a class="btn" href="{{ '/assets/gurunath-parasaram.pdf' | relative_url }}">{% include icon.html name="download" %}PDF</a>
         <a class="btn" href="#contact" data-email-btn>{% include icon.html name="mail" %}Email</a>
         {%- for l in p.links %}
         <a class="btn btn-quiet" href="{{ l.url }}" rel="me noopener">{% include icon.html name=l.icon %}{{ l.label }}</a>
@@ -45,7 +45,7 @@ redirect_from:
   <section class="work" aria-labelledby="work-title">
     <h2 id="work-title" class="section-title">Selected work</h2>
     <ul class="cards">
-      {%- for h in site.data.cv.highlights %}
+      {%- for h in site.data.experience.highlights %}
       <li class="card">
         <h3>{{ h.title }}</h3>
         <p class="card-where">{{ h.where }}</p>
@@ -53,7 +53,7 @@ redirect_from:
       </li>
       {%- endfor %}
     </ul>
-    <p><a href="{{ '/cv/' | relative_url }}">Full experience on the CV page →</a></p>
+    <p><a href="{{ '/experience/' | relative_url }}">All experience and skills →</a></p>
   </section>
 
   {%- if site.posts.size > 0 %}

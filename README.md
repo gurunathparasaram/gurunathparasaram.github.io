@@ -7,7 +7,7 @@ A plain Jekyll site that GitHub Pages builds by itself. There is no theme gem, n
 ## The two modes
 
 - **Plain mode** (the default) is a clean profile site.
-- **Game mode** turns the same pages into levels on a quest map: Home, CV, Blog, Life, Travel, Reading, Telugu and Feed. It shows exactly the same content as plain mode; only the navigation and styling change. A bar under the header shows the current level, a progress bar of levels explored, previous/next buttons, a Map button, and **Exit to plain mode**.
+- **Game mode** turns the same pages into levels on a quest map: Home, Experience, Blog, Life, Travel, Reading, Telugu and Feed. It shows exactly the same content as plain mode; only the navigation and styling change. A bar under the header shows the current level, a progress bar of levels explored, previous/next buttons, a Map button, and **Exit to plain mode**.
 
 **Switching:** use the **Plain / Game** switch in the top-right of every page. The choice is saved in the visitor's browser (`localStorage`, key `gp-mode`); if storage is blocked the site still works and falls back to `default_mode` in `_config.yml`. You can link straight to a mode with `?mode=game` or `?mode=plain`.
 
@@ -20,7 +20,7 @@ The theme button (sun/moon) switches light and dark; by default the site follows
 | What | File |
 | --- | --- |
 | Name, summary, links, photo, focus areas, home-page numbers | `_data/profile.yml` |
-| CV (short role summaries, skills, education, projects, home highlights) | `_data/cv.yml` |
+| Experience page (short role summaries, skills, education, projects, home highlights) | `_data/experience.yml` |
 | News on the home page | `_data/news.yml` |
 | Travel (US states, other places) | `_data/travel.yml` |
 | Books | `_data/reading.yml` |
@@ -91,11 +91,11 @@ Visited states are highlighted on Life › Travel. For cities or countries outsi
 ### Add Telugu phrases or notes
 Edit `_data/telugu.yml`. `phrases` and `notes` feed Life › Telugu. Each phrase has `te` (Telugu script), `rom` (romanization) and `en` (English gloss). Telugu text is marked `lang="te"` automatically.
 
-### Update the CV
-Each role in `_data/cv.yml` has a 1-3 sentence `summary` and a one-line `stack`. Keep it short; the PDF has the full resume.
+### Update the Experience page
+Each role in `_data/experience.yml` has a 1-3 sentence `summary` and a one-line `stack`. Keep it short; the PDF has the full resume.
 
-### Add the CV PDF
-Export the PDF from Overleaf and save it as **`assets/cv.pdf`**, replacing the one-page placeholder that is there now. The "Download PDF" buttons on Home and CV already point to it.
+### Add the résumé PDF
+Export the PDF from Overleaf and save it as **`assets/gurunath-parasaram.pdf`**, replacing the one-page placeholder that is there now. The "PDF" button on Home and "Download PDF" on the Experience page already point to it.
 
 ### X (Twitter) feed
 The handle is set in `_config.yml` (`twitter_handle: "guru__nath"`, without the `@`). Life › Feed then shows:
@@ -127,7 +127,7 @@ bundle exec jekyll serve --livereload
 Then open http://localhost:4000. On Ruby 3+ the `webrick` gem in the `Gemfile` is needed for `serve`.
 
 ## Deploying
-Push to `main`. GitHub Pages (Settings › Pages › "Deploy from a branch", `main`, `/ (root)`) builds and publishes the site in a minute or two. Only the plugins GitHub Pages supports are used: `jekyll-seo-tag`, `jekyll-sitemap` and `jekyll-redirect-from`. Old URLs (`/resume/`, `/travel/`, `/contact/`, `/aboutme/`, `/posts/`) redirect to the new pages.
+Push to `main`. GitHub Pages (Settings › Pages › "Deploy from a branch", `main`, `/ (root)`) builds and publishes the site in a minute or two. Only the plugins GitHub Pages supports are used: `jekyll-seo-tag`, `jekyll-sitemap` and `jekyll-redirect-from`. Old URLs (`/cv/`, `/resume/`, `/travel/`, `/contact/`, `/aboutme/`, `/posts/`) redirect to the new pages.
 
 ## Credits
 - Fonts from Google Fonts, all under the SIL Open Font License: [Fraunces](https://fonts.google.com/specimen/Fraunces), [Noto Sans Telugu](https://fonts.google.com/noto/specimen/Noto+Sans+Telugu) and [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P).

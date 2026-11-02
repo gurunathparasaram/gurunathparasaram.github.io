@@ -10,11 +10,11 @@
   icon: house
   hint: Start here
   nav: true
-- id: cv
-  title: CV
-  url: /cv/
+- id: experience
+  title: Experience
+  url: /experience/
   icon: scroll
-  hint: Experience and skills
+  hint: Roles and skills
   nav: true
 - id: blog
   title: Blog

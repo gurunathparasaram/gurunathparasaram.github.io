@@ -1,25 +1,27 @@
-# Shared profile data. Used by the Home page, the CV page and the footer.
+# Shared profile data. Used by the Home page, the Experience page and the footer.
 name: Gurunath Parasaram
 full_name: Reddy Gurunatha Swamy Parasaram
 role: AI Engineer
 photo: /assets/img/gurunath.jpg
 photo_alt: Gurunath Parasaram, smiling, wearing glasses and a dark jacket, with snowy pine trees behind him.
 
-# Figures stay general on the public site ($xx M, xxK RPS, "tens of thousands").
+# Figures stay general on the public site ("millions of dollars", "tens of thousands").
 # The payment-integrity result belongs to a multi-team program; credit Gurunath
 # with leading its AI core, never with finding the money alone.
 summary: >-
   AI Engineer with 6+ years building production ML and LLM systems. Led the AI
-  core of a payment-integrity program that identified $xx M in overpayments.
+  core of a payment-integrity program that identified millions of dollars in
+  overpayments.
   Earlier led a team building NLP services that process tens to hundreds of
-  millions of sentences per day at up to xxK RPS.
+  millions of sentences per day at up to tens of thousands of requests per
+  second.
 
-# Longer "About" paragraph, shown at the top of the CV page.
+# Longer "About" paragraph, shown at the top of the Experience page.
 about: >-
   At Tiger Analytics I lead technical development of the agentic AI core of a
   multi-team healthcare payment-integrity program. It cut contract review from
   about an hour to seconds, made every contract in the portfolio searchable, and
-  helped the program identify $xx M in overpayments. I own the AI system end to
+  helped the program identify millions of dollars in overpayments. I own the AI system end to
   end: multi-agent design, LLM evaluation, AI guardrails for sensitive data, cost
   and latency, and MLOps/LLMOps in the cloud. I also lead client discovery and
   solution design for healthcare AI projects, work with business and legal leads
@@ -34,10 +36,10 @@ stats:
     label: production ML and LLM systems
   - value: "Hour → seconds"
     label: contract review time with agentic AI
-  - value: "$xx M"
-    label: in overpayments identified by a program whose AI core I led
-  - value: "xxK RPS"
-    label: peak real-time NLP inference
+  - value: "Tens of thousands"
+    label: contracts made searchable
+  - value: "Hundreds of millions"
+    label: sentences per day through NLP services I led
 
 # Focus areas shown as chips on the Home page.
 focus:

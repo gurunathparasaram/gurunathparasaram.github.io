@@ -1,14 +1,14 @@
-# CV content for the /cv/ page and the Home page.
+# Content for the /experience/ page and the Home page ("Selected work").
 # Keep each role short: `summary` is 1-3 sentences (Markdown allowed), `stack` one line.
-# The full resume is the PDF at /assets/cv.pdf.
-experience:
+# The full resume is the PDF at /assets/gurunath-parasaram.pdf.
+roles:
   - company: Tiger Analytics
     role: Data Scientist
     location: USA
     dates: Feb 2025 – present
     summary: >-
-      Built the AI core of a multi-team payment-integrity program that identified $xx M in
-      overpayments ($x M recovered in year one), scaling automated audits from hundreds to
+      Built the AI core of a multi-team payment-integrity program that identified millions of
+      dollars in overpayments, with millions recovered in year one, scaling automated audits from hundreds to
       thousands of hospitals. Lead the agentic extraction and retrieval system end to end:
       OCR, multi-agent LLM workflows with structured outputs and guardrails, PySpark pipelines
       on Databricks, an evaluation harness that cut evaluation from hours to 1 minute, and
@@ -41,7 +41,7 @@ experience:
     summary: >-
       Led a team building a Transformer-based [grammatical error correction system](https://www.zoho.com/writer/ai-writing-assistant.html)
       that processes tens to hundreds of millions of sentences per day. Scaled real-time inference
-      to xxK RPS with quantization, distillation and a CPU-to-GPU migration
+      to tens of thousands of requests per second with quantization, distillation and a CPU-to-GPU migration
       (50% lower latency, 7x throughput).
     stack: PyTorch Lightning, Transformers, ONNX Runtime, Triton, NVIDIA Nsight
 
@@ -77,10 +77,10 @@ projects:
 highlights:
   - title: Agentic AI for payment integrity
     where: Tiger Analytics · 2025–present
-    text: Led the AI core of a payment-integrity program that identified $xx M in overpayments. Contract review went from about an hour to seconds across tens of thousands of contracts.
+    text: Led the AI core of a payment-integrity program that identified millions of dollars in overpayments. Contract review went from about an hour to seconds across tens of thousands of contracts.
   - title: Hybrid RAG
     where: EXL · 2024–2025
     text: Retrieval for an assistant used by thousands of service reps. Search accuracy up 60%, recall up 50%.
   - title: NLP inference at scale
     where: Zoho · 2018–2022
-    text: Transformer-based grammar correction, scaled to xxK RPS with quantization, distillation and GPU serving.
+    text: Transformer-based grammar correction, scaled to tens of thousands of requests per second with quantization, distillation and GPU serving.
