@@ -7,14 +7,17 @@ Humans: see `README.md`. This file is excluded from the site build.
 - Never name clients or the companies a client project was for, internal product or project names, or the US states tied to client work.
 - Never mention immigration, visa or work-authorization status.
 - No phone number. No home city or street; the site shows the role and links only.
-- Keep the Tiger Analytics role title as **Data Scientist**, matching the resume on file. Other roles are as in `_data/cv.yml`.
-- Experience on the site stays short: 1-3 sentences per role (`summary`) plus a one-line `stack`. The full resume is the PDF at `assets/cv.pdf`.
-- Plain, factual wording. No superlatives or inflated adjectives. Numbers only when they come from the resume.
+- Keep the Tiger Analytics role title as **Data Scientist**, matching the resume on file. Other roles are as in `_data/experience.yml`.
+- Experience on the site stays short: 1-3 sentences per role (`summary`) plus a one-line `stack`. The full resume is the PDF at `assets/gurunath-parasaram.pdf`.
+- Plain, factual wording. No superlatives or inflated adjectives.
+- Figures stay general, in words: "millions of dollars", "tens of thousands of contracts", "thousands of service reps", "tens of thousands of requests per second". Never exact dollar, contract or RPS numbers, and no placeholder forms like `$xx M`.
+- The payment-integrity result belongs to a multi-team program. Credit Gurunath with leading its AI core ("Led the AI core of a payment-integrity program that identified millions of dollars in overpayments"); never say he alone found, saved or surfaced the money.
+- No job-seeking language ("open to work", "looking for"). The work-history page is called **Experience** (`/experience/`), not CV.
 - News: blog posts are added automatically. `_data/news.yml` is for manual items (LinkedIn posts, talks). No career or education updates.
 - Plain and game mode must show the same pages and content. Add pages through `_data/levels.yml`; never add content that only one mode shows.
 
 ## Where content lives
-- `_data/profile.yml` (summary, links, numbers), `_data/cv.yml`, `_data/news.yml`, `_data/travel.yml`, `_data/reading.yml`, `_data/telugu.yml`, `_data/x_posts.yml` (selected X posts), `_data/levels.yml` (page list for both modes).
+- `_data/profile.yml` (summary, links, numbers), `_data/experience.yml` (Experience page), `_data/news.yml`, `_data/travel.yml`, `_data/reading.yml`, `_data/telugu.yml`, `_data/x_posts.yml` (selected X posts), `_data/levels.yml` (page list for both modes).
 - Blog posts: `_posts/`.
 - One stylesheet (`assets/css/site.css`) and one script (`assets/js/site.js`). No build step and no npm.
 
