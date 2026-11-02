@@ -1,0 +1,25 @@
+{%- comment -%} include.books = list, include.id = prefix {%- endcomment -%}
+{%- assign groups = "reading|Reading now,read|Read,want|Want to read" | split: "," -%}
+<div class="shelves">
+{%- for g in groups -%}
+  {%- assign parts = g | split: "|" -%}
+  {%- assign shelf = include.books | where: "status", parts[0] -%}
+  {%- if shelf.size > 0 %}
+  <div class="shelf shelf-{{ parts[0] }}">
+    <h3 class="shelf-title">{{ parts[1] }} <span class="count">{{ shelf.size }}</span></h3>
+    <ul class="books">
+      {%- for b in shelf %}
+      <li class="book">
+        <span class="book-spine" aria-hidden="true"></span>
+        <div>
+          <p class="book-title">{% if b.link %}<a href="{{ b.link }}">{{ b.title }}</a>{% else %}{{ b.title }}{% endif %}</p>
+          <p class="book-author">{{ b.author }}{% if b.year %} · {{ b.year }}{% endif %}</p>
+          {%- if b.note %}<p>{{ b.note | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>{% endif %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+  {%- endif %}
+{%- endfor -%}
+</div>

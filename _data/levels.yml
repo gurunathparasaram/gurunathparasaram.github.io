@@ -1,37 +1,54 @@
-# Game mode: the quest map. Each level opens the same page as plain mode.
-# Order here = level order. `icon` must exist in _includes/icon.html.
+# Site structure, shared by BOTH modes.
+# - Plain mode: the header nav shows levels with `nav: true`; the Life sub-nav
+#   and the Life overview cards show levels with `parent: life`.
+# - Game mode: every entry is a level on the quest map, in this order.
+# Add or reorder pages here and both modes update together.
+# `icon` must exist in _includes/icon.html.
 - id: home
   title: Home
   url: /
   icon: house
   hint: Start here
+  nav: true
 - id: cv
   title: CV
   url: /cv/
   icon: scroll
   hint: Experience and skills
+  nav: true
 - id: blog
   title: Blog
   url: /blog/
   icon: quill
-  hint: Notes and posts
+  hint: Posts
+  nav: true
+- id: life
+  title: Life
+  url: /life/
+  icon: compass
+  hint: Outside work
+  nav: true
 - id: travel
   title: Travel
   url: /life/travel/
-  icon: compass
-  hint: Places
+  icon: pin
+  hint: US states
+  parent: life
 - id: reading
   title: Reading
   url: /life/reading/
   icon: book
-  hint: Books
+  hint: Books and articles
+  parent: life
 - id: telugu
   title: Telugu
   url: /life/telugu/
   icon: letter
   hint: Phrases and notes
+  parent: life
 - id: feed
   title: Feed
   url: /life/feed/
   icon: bubble
   hint: Posts on X
+  parent: life

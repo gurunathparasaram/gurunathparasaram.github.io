@@ -1,19 +1,50 @@
-# Books for Life > Reading.
-#   status: reading | read | want
+# Life > Reading. Three shelves: fiction, nonfiction, articles.
+#
+# Books (fiction / nonfiction):
 #   title, author: required
-#   year: optional (year you finished it)
-#   note: optional one-liner (Markdown allowed)
-#   link: optional URL
-#   sample: true marks a placeholder entry. Replace or delete these.
-- title: AI Engineering
-  author: Chip Huyen
-  status: reading
-  sample: true
-- title: Designing Machine Learning Systems
-  author: Chip Huyen
-  status: read
-  sample: true
-- title: Speech and Language Processing
-  author: Daniel Jurafsky and James H. Martin
-  status: want
-  sample: true
+#   status: reading | read | want
+#   year: optional (year published)
+#   note, link: optional
+#
+# Articles: grouped by source. Each item: title, url, optional year.
+
+fiction:
+  - { title: The Secret of Secrets, author: Dan Brown, status: reading, year: 2025 }
+  - { title: Origin, author: Dan Brown, status: read, year: 2017 }
+  - { title: Inferno, author: Dan Brown, status: read, year: 2013 }
+  - { title: The Lost Symbol, author: Dan Brown, status: read, year: 2009 }
+  - { title: The Da Vinci Code, author: Dan Brown, status: read, year: 2003 }
+  - { title: Deception Point, author: Dan Brown, status: read, year: 2001 }
+  - { title: Angels & Demons, author: Dan Brown, status: read, year: 2000 }
+  - { title: Digital Fortress, author: Dan Brown, status: read, year: 1998 }
+
+nonfiction:
+  - { title: Atomic Habits, author: James Clear, status: read, year: 2018 }
+
+articles:
+  - source: Jay Alammar
+    url: https://jalammar.github.io/
+    items:
+      - { title: "Visualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention)", url: "https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/", year: 2018 }
+      - { title: The Illustrated Transformer, url: "https://jalammar.github.io/illustrated-transformer/", year: 2018 }
+      - { title: "The Illustrated BERT, ELMo, and co.", url: "https://jalammar.github.io/illustrated-bert/", year: 2018 }
+      - { title: The Illustrated Word2vec, url: "https://jalammar.github.io/illustrated-word2vec/", year: 2019 }
+      - { title: The Illustrated GPT-2, url: "https://jalammar.github.io/illustrated-gpt2/", year: 2019 }
+      - { title: A Visual Guide to Using BERT for the First Time, url: "https://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/", year: 2019 }
+      - { title: How GPT3 Works - Visualizations and Animations, url: "https://jalammar.github.io/how-gpt3-works-visualizations-animations/", year: 2020 }
+      - { title: Interfaces for Explaining Transformer Language Models, url: "https://jalammar.github.io/explaining-transformers/", year: 2020 }
+      - { title: The Illustrated Retrieval Transformer, url: "https://jalammar.github.io/illustrated-retrieval-transformer/", year: 2022 }
+  - source: Christopher Olah (colah's blog)
+    url: https://colah.github.io/
+    items:
+      - { title: "Neural Networks, Manifolds, and Topology", url: "https://colah.github.io/posts/2014-03-NN-Manifolds-Topology/", year: 2014 }
+      - { title: "Deep Learning, NLP, and Representations", url: "https://colah.github.io/posts/2014-07-NLP-RNNs-Representations/", year: 2014 }
+      - { title: "Conv Nets: A Modular Perspective", url: "https://colah.github.io/posts/2014-07-Conv-Nets-Modular/", year: 2014 }
+      - { title: Understanding Convolutions, url: "https://colah.github.io/posts/2014-07-Understanding-Convolutions/", year: 2014 }
+      - { title: Visualizing MNIST, url: "https://colah.github.io/posts/2014-10-Visualizing-MNIST/", year: 2014 }
+      - { title: Groups & Group Convolutions, url: "https://colah.github.io/posts/2014-12-Groups-Convolution/", year: 2014 }
+      - { title: "Visualizing Representations: Deep Learning and Human Beings", url: "https://colah.github.io/posts/2015-01-Visualizing-Representations/", year: 2015 }
+      - { title: Understanding LSTM Networks, url: "https://colah.github.io/posts/2015-08-Understanding-LSTMs/", year: 2015 }
+      - { title: "Calculus on Computational Graphs: Backpropagation", url: "https://colah.github.io/posts/2015-08-Backprop/", year: 2015 }
+      - { title: "Neural Networks, Types, and Functional Programming", url: "https://colah.github.io/posts/2015-09-NN-Types-FP/", year: 2015 }
+      - { title: Attention and Augmented Recurrent Neural Networks (Distill), url: "https://distill.pub/2016/augmented-rnns/", year: 2016 }

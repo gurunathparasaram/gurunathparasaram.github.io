@@ -7,7 +7,7 @@ A plain Jekyll site that GitHub Pages builds by itself. There is no theme gem, n
 ## The two modes
 
 - **Plain mode** (the default) is a clean profile site.
-- **Game mode** turns the same pages into seven levels on a quest map: Home, CV, Blog, Travel, Reading, Telugu and Feed. A bar under the header shows the current level, a progress bar of levels explored, previous/next buttons, a Map button, and **Exit to plain mode**.
+- **Game mode** turns the same pages into levels on a quest map: Home, CV, Blog, Life, Travel, Reading, Telugu and Feed. It shows exactly the same content as plain mode; only the navigation and styling change. A bar under the header shows the current level, a progress bar of levels explored, previous/next buttons, a Map button, and **Exit to plain mode**.
 
 **Switching:** use the **Plain / Game** switch in the top-right of every page. The choice is saved in the visitor's browser (`localStorage`, key `gp-mode`); if storage is blocked the site still works and falls back to `default_mode` in `_config.yml`. You can link straight to a mode with `?mode=game` or `?mode=plain`.
 
@@ -32,17 +32,20 @@ The theme button (sun/moon) switches light and dark; by default the site follows
 
 ## How to…
 
-### Add a news item
-Add an entry at the **top** of `_data/news.yml` (newest first):
+### News
+The News box on the home page fills itself:
+- **Blog posts** appear automatically (labelled "Blog") as soon as they are pushed.
+- **Everything else** (LinkedIn posts, talks, other updates) goes in `_data/news.yml` by hand:
 
 ```yaml
-- date: 2026-12            # YYYY, YYYY-MM or YYYY-MM-DD, shown as written
-  text: Spoke about LLM evaluation at a local meetup.
-  link: https://example.com # optional
-  link_text: Slides         # optional, default "Read more"
+- date: 2026-12-03                       # YYYY-MM-DD, YYYY-MM or YYYY
+  source: LinkedIn                       # optional label
+  text: Wrote about evaluating LLM agents with golden datasets.
+  link: https://www.linkedin.com/posts/...
+  link_text: Read on LinkedIn            # optional, default "Read more"
 ```
 
-The news box scrolls slowly and loops when the list is taller than the box. It pauses on hover or keyboard focus, has a Pause button, and stays still for visitors who prefer reduced motion.
+Items are sorted newest first. LinkedIn has no public feed or API for personal posts that a static site can read, so LinkedIn posts cannot be pulled in automatically; paste the link here instead. While the list is empty the box says "No updates yet". Once it is taller than the box it scrolls slowly and loops, pauses on hover or keyboard focus, has a Pause button, and stays still for visitors who prefer reduced motion.
 
 ### Write a blog post
 1. Create `_posts/YYYY-MM-DD-short-title.md`, for example `_posts/2026-11-15-evaluating-llm-agents.md`.
@@ -59,19 +62,22 @@ The news box scrolls slowly and loops when the list is taller than the box. It p
 
 `AGENTS.md` has the same steps for AI coding agents, plus the content rules for this site.
 
-### Add a book
-Add to `_data/reading.yml`:
+### Reading
+`_data/reading.yml` has three shelves:
 
 ```yaml
-- title: Designing Data-Intensive Applications
-  author: Martin Kleppmann
-  status: reading      # reading | read | want
-  year: 2026           # optional
-  note: Optional one-liner.
-  link: https://...    # optional
+fiction:
+  - { title: The Secret of Secrets, author: Dan Brown, status: reading, year: 2025 }
+nonfiction:
+  - { title: Atomic Habits, author: James Clear, status: read, year: 2018 }
+articles:
+  - source: Jay Alammar
+    url: https://jalammar.github.io/
+    items:
+      - { title: The Illustrated Transformer, url: "https://jalammar.github.io/illustrated-transformer/", year: 2018 }
 ```
 
-The three entries marked `sample: true` are placeholders that show a "Sample entry" badge. Replace or delete them.
+Book `status` is `reading`, `read` or `want`; each shelf groups books by status. Articles are grouped by source.
 
 ### Update travel
 In `_data/travel.yml`, mark a US state as visited:
@@ -94,8 +100,8 @@ Export the PDF from Overleaf and save it as **`assets/cv.pdf`**, replacing the o
 ### Set the Twitter / X handle
 In `_config.yml`, set `twitter_handle: yourhandle` (no `@`). Until then, Life › Feed shows a short note. Once it is set, the page shows a "Follow on X" link plus a button that loads X's official timeline embed on demand. If the embed is blocked or does not load within 8 seconds, a message with the link to X appears instead.
 
-### Add or reorder game levels
-Edit `_data/levels.yml`. Each page says which level it is with `level: <id>` in its front matter. Icons are defined in `_includes/icon.html`.
+### Add or reorder pages (both modes)
+`_data/levels.yml` is the single list of pages. Plain mode builds its header nav (`nav: true`), the Life sub-nav and the Life cards (`parent: life`) from it, and game mode builds the quest map from the same list, so the two modes always show the same sections and content. Each page names its entry with `level: <id>` in its front matter. Icons are defined in `_includes/icon.html`.
 
 ## Run it locally
 

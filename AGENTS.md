@@ -10,7 +10,8 @@ Humans: see `README.md`. This file is excluded from the site build.
 - Keep the Tiger Analytics role title as **Data Scientist**, matching the resume on file. Other roles are as in `_data/cv.yml`.
 - Experience on the site stays short: 1-3 sentences per role (`summary`) plus a one-line `stack`. The full resume is the PDF at `assets/cv.pdf`.
 - Plain, factual wording. No superlatives or inflated adjectives. Numbers only when they come from the resume.
-- News (`_data/news.yml`) is for site, writing, talks, education and personal updates, not job changes.
+- News: blog posts are added automatically. `_data/news.yml` is for manual items (LinkedIn posts, talks). No career or education updates.
+- Plain and game mode must show the same pages and content. Add pages through `_data/levels.yml`; never add content that only one mode shows.
 
 ## Where content lives
 - `_data/profile.yml` (summary, links, numbers), `_data/cv.yml`, `_data/news.yml`, `_data/travel.yml`, `_data/reading.yml`, `_data/telugu.yml`, `_data/levels.yml` (game mode).
@@ -29,7 +30,7 @@ Humans: see `README.md`. This file is excluded from the site build.
    ```
 3. Write Markdown (GFM): `##` headings, lists, links, tables and fenced code blocks with a language.
 4. Images go in `assets/img/blog/` and need alt text: `![What the image shows](/assets/img/blog/diagram.png)`.
-5. Posts appear on `/blog/` and under "Latest writing" on the home page automatically. There is no RSS feed.
+5. Posts appear on `/blog/`, under "Latest writing" on the home page, and in the home page News box automatically. There is no RSS feed.
 
 ## Checking a change
 ```bash
