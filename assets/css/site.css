@@ -178,7 +178,10 @@ html:not([data-mode="game"]) .game-only, .no-js .game-only { display: none !impo
   .hero { flex-direction: column; gap: 1rem; }
   .hero-photo { width: 7rem; border-radius: 18px; }
 }
-.stats { grid-area: stats; }
+.stats { grid-area: stats; display: grid; gap: 1rem; }
+.stats ul.focus { display: flex; flex-wrap: wrap; gap: .5rem; }
+.stats .focus li { padding: .3rem .8rem; border-radius: 999px; background: var(--accent-soft); color: var(--ink); border: 0; font-size: .9rem; font-weight: 600; }
+:root[data-mode="game"] .stats .focus li { border: 2px solid var(--edge); border-radius: 4px; box-shadow: none; }
 .stats ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: .75rem; }
 .stats li { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: .9rem 1rem; }
 .stat-value { display: block; font: 600 1.6rem/1.1 var(--font-display); color: var(--accent); }

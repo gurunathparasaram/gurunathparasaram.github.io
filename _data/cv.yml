@@ -42,6 +42,8 @@ skills:
     items: LLM-as-a-judge, OpenAI Batch API, cost optimization, MLflow, Databricks and Azure monitoring
   - area: ML
     items: PyTorch, PyTorch Lightning, Hugging Face Transformers, PEFT, scikit-learn, ONNX Runtime, Triton, NVIDIA Nsight
+  - area: Data Analysis
+    items: Exploratory data analysis (EDA), data cleaning and validation, feature engineering, cohort and slice analysis, error analysis, statistical analysis, data visualization, pandas, NumPy, SQL, PySpark, Matplotlib, seaborn
   - area: Data & Cloud
     items: Python, SQL, Bash, Databricks (PySpark, Delta Lake, Unity Catalog, Workflows, Asset Bundles), Azure AI Foundry, GCP (BigQuery, BigTable), Docker, GitHub Actions, Jenkins, FastAPI
   - area: Responsible AI & Healthcare
@@ -60,14 +62,15 @@ projects:
   - name: Explainable Deep Learning
     url: https://github.com/gurunathparasaram/explainable_deep_learning
     text: Experiments with explanation methods for deep learning models.
-  - name: Llama-3-70B distributed training
-    text: Compared FSDP and DeepSpeed for training Llama-3-70B on 8 GPUs.
 
 # Three short highlights for the Home page ("Selected work").
 highlights:
   - title: Agentic AI for healthcare contracts
     where: Tiger Analytics · 2025–present
     text: OCR, LLM agents, structured outputs and guardrails on Databricks. Review time per contract went from 60 minutes to 30 seconds across 60k+ contracts.
+  - title: Claims and contract data analysis
+    where: Tiger Analytics · 2025–present
+    text: Joined extracted contract terms with claims and provider data to find overpayments. $75M identified; audit coverage grew from 180 to 5,000+ hospitals.
   - title: Hybrid RAG for a service assistant
     where: EXL · 2024–2025
     text: Retrieval over 30+ sources for an assistant used by 2,000+ service reps. Accuracy up 60% and recall up 50%.

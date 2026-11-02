@@ -34,6 +34,9 @@ redirect_from:
   {% include telugu-panel.html %}
 
   <section class="stats" aria-label="Highlights in numbers">
+    <ul class="focus" aria-label="Focus areas">
+      {%- for f in p.focus %}<li>{{ f }}</li>{% endfor %}
+    </ul>
     <ul>
       {%- for s in p.stats %}
       <li><span class="stat-value">{{ s.value }}</span><span class="stat-label">{{ s.label }}</span></li>

@@ -28,6 +28,15 @@ stats:
   - value: "20,000 RPS"
     label: peak real-time NLP inference
 
+# Focus areas shown as chips on the Home page.
+focus:
+  - Agentic AI & LLMs
+  - RAG and retrieval
+  - LLM evaluation
+  - NLP at scale
+  - Data analysis & EDA
+  - Healthcare AI
+
 # The email is split so it is not in the page source as plain text.
 email_user: guruparasar
 email_domain: gmail.com
