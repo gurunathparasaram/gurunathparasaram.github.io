@@ -1,0 +1,37 @@
+# Game mode: the quest map. Each level opens the same page as plain mode.
+# Order here = level order. `icon` must exist in _includes/icon.html.
+- id: home
+  title: Home
+  url: /
+  icon: house
+  hint: Start here
+- id: cv
+  title: CV
+  url: /cv/
+  icon: scroll
+  hint: Experience and skills
+- id: blog
+  title: Blog
+  url: /blog/
+  icon: quill
+  hint: Notes and posts
+- id: travel
+  title: Travel
+  url: /life/travel/
+  icon: compass
+  hint: Places
+- id: reading
+  title: Reading
+  url: /life/reading/
+  icon: book
+  hint: Books
+- id: telugu
+  title: Telugu
+  url: /life/telugu/
+  icon: letter
+  hint: Phrases and notes
+- id: feed
+  title: Feed
+  url: /life/feed/
+  icon: bubble
+  hint: Posts on X

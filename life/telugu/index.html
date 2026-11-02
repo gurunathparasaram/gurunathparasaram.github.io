@@ -1,0 +1,32 @@
+---
+layout: default
+title: Telugu
+level: telugu
+---
+{%- assign te = site.data.telugu -%}
+<h1 class="page-title">Telugu <span lang="te" class="te-title">తెలుగు</span></h1>
+{% include life-nav.html %}
+<p class="lede">Telugu is a Dravidian language spoken mainly in Andhra Pradesh and Telangana in India. This page collects everyday phrases and learning notes.</p>
+
+<section aria-labelledby="phrases-title">
+  <h2 id="phrases-title" class="section-title">Everyday phrases</h2>
+  <ul class="phrases">
+    {%- for ph in te.phrases %}
+    <li class="phrase card">
+      <p class="te" lang="te">{{ ph.te }}</p>
+      <p class="rom" lang="te-Latn">{{ ph.rom }}</p>
+      <p class="en">{{ ph.en }}</p>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section aria-labelledby="notes-title" class="prose">
+  <h2 id="notes-title" class="section-title">Notes</h2>
+  {%- for n in te.notes %}
+  <article class="note">
+    <h3>{{ n.title }} <time class="muted" datetime="{{ n.date }}">{{ n.date }}</time></h3>
+    {{ n.body | markdownify }}
+  </article>
+  {%- endfor %}
+</section>

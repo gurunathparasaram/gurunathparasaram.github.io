@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* Set mode and theme before first paint to avoid a flash. Storage can throw (private mode), so wrap it. */
+  (function () {
+    var d = document.documentElement, mode = null, theme = null;
+    try { mode = localStorage.getItem('gp-mode'); theme = localStorage.getItem('gp-theme'); } catch (e) {}
+    try {
+      var q = new URLSearchParams(location.search).get('mode');
+      if (q === 'game' || q === 'plain') { mode = q; try { localStorage.setItem('gp-mode', q); } catch (e) {} }
+    } catch (e) {}
+    if (mode !== 'game' && mode !== 'plain') mode = '{{ site.default_mode | default: "plain" }}';
+    d.setAttribute('data-mode', mode);
+    if (theme === 'light' || theme === 'dark') d.setAttribute('data-theme', theme);
+    d.className = d.className.replace('no-js', 'js');
+  })();
+</script>
+{% seo %}
+{% feed_meta %}
+<link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Noto+Sans+Telugu:wght@400;600&family=Press+Start+2P&display=swap">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+<script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>

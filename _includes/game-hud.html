@@ -1,0 +1,31 @@
+{%- comment -%} Game mode bar. Hidden in plain mode by CSS. {%- endcomment -%}
+{%- assign levels = site.data.levels -%}
+{%- assign total = levels | size -%}
+{%- assign cur = nil -%}{%- assign cur_i = -1 -%}
+{%- for l in levels -%}{%- if l.id == page.level -%}{%- assign cur = l -%}{%- assign cur_i = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+<div class="hud game-only" data-current-level="{{ page.level }}">
+  <div class="wrap hud-inner">
+    <p class="hud-title">
+      {%- if cur -%}
+        <span class="hud-lv">LV {{ cur_i | plus: 1 }}/{{ total }}</span> <span class="hud-name">{{ cur.title }}</span>
+      {%- else -%}
+        <span class="hud-lv">Side area</span> <span class="hud-name">{{ page.title | default: "Map" }}</span>
+      {%- endif -%}
+    </p>
+    <p class="hud-xp">
+      <span class="xp-bar" aria-hidden="true"><span class="xp-fill"></span></span>
+      <span class="xp-text"><span data-xp-count>0</span>/{{ total }} explored</span>
+    </p>
+    <nav class="hud-nav" aria-label="Levels">
+      {%- if cur_i > 0 -%}{%- assign p = levels[cur_i | minus: 1] -%}
+        <a class="hud-btn" href="{{ p.url | relative_url }}" rel="prev">{% include icon.html name="prev" %}<span class="hud-btn-text">{{ p.title }}</span></a>
+      {%- endif -%}
+      <button type="button" class="hud-btn hud-map-btn" data-open-map aria-haspopup="dialog">{% include icon.html name="map" %}<span>Map</span><kbd>M</kbd></button>
+      {%- assign n_i = cur_i | plus: 1 -%}
+      {%- if n_i < total -%}{%- assign n = levels[n_i] -%}
+        <a class="hud-btn hud-next" href="{{ n.url | relative_url }}" rel="next"><span class="hud-btn-text">{{ n.title }}</span>{% include icon.html name="next" %}</a>
+      {%- endif -%}
+    </nav>
+    <button type="button" class="hud-exit" data-set-mode="plain">Exit to plain mode</button>
+  </div>
+</div>

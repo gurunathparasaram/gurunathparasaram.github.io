@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}" class="no-js">
+<head>
+{% include head.html %}
+</head>
+<body class="level-{{ page.level | default: 'none' }}">
+{% include header.html %}
+{% include game-hud.html %}
+<main id="main" class="wrap main" tabindex="-1">
+{{ content }}
+</main>
+<div class="toast game-only" role="status" aria-live="polite"></div>
+{% include map-dialog.html %}
+{% include footer.html %}
+</body>
+</html>

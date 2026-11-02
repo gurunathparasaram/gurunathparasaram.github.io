@@ -1,0 +1,44 @@
+# Shared profile data. Used by the Home page, the CV page and the footer.
+name: Gurunath Parasaram
+full_name: Reddy Gurunatha Swamy Parasaram
+role: AI Engineer
+location: Chicago, IL
+photo: /assets/img/gurunath.jpg
+photo_alt: Gurunath Parasaram, smiling, wearing glasses and a dark jacket, with snowy pine trees behind him.
+
+summary: >-
+  AI Engineer with 6+ years building production ML and LLM systems. Most
+  recently led development of agentic AI that screens 60k+ healthcare
+  contracts and surfaced $75M in identified overpayments. Earlier led a team
+  building NLP services that process tens to hundreds of millions of sentences
+  per day at up to 20,000 RPS.
+
+# Optional one-line note shown under the summary, e.g. the roles you are
+# open to. Leave empty to hide it.
+availability: ""
+
+# Key numbers shown as small tiles on the Home page.
+stats:
+  - value: "6+ yrs"
+    label: production ML and LLM systems
+  - value: "60k+"
+    label: healthcare contracts screened by agentic AI
+  - value: "$75M"
+    label: in identified overpayments
+  - value: "20,000 RPS"
+    label: peak real-time NLP inference
+
+# The email is split so it is not in the page source as plain text.
+email_user: guruparasar
+email_domain: gmail.com
+
+links:
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/pgurunath/
+    icon: link
+  - label: GitHub
+    url: https://github.com/gurunathparasaram
+    icon: code
+  - label: Google Scholar
+    url: https://scholar.google.com/citations?user=tqS7ZN8AAAAJ&hl=en
+    icon: book

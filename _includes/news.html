@@ -1,0 +1,19 @@
+<section class="news" aria-labelledby="news-title">
+  <div class="news-head">
+    <h2 id="news-title">News</h2>
+    <button type="button" class="news-toggle" aria-pressed="false" hidden>
+      <span class="when-playing">{% include icon.html name="pause" %}Pause</span>
+      <span class="when-paused">{% include icon.html name="play" %}Play</span>
+    </button>
+  </div>
+  <div class="news-viewport" tabindex="0" role="region" aria-label="News, newest first. Scrolls slowly; hover or focus to pause.">
+    <ul class="news-list">
+      {%- for item in site.data.news -%}
+      <li class="news-item">
+        <time datetime="{{ item.date }}">{{ item.date }}</time>
+        <p>{{ item.text | markdownify | remove: "<p>" | remove: "</p>" | strip }}{% if item.link %} <a href="{{ item.link }}">{{ item.link_text | default: "Read more" }}</a>{% endif %}</p>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>

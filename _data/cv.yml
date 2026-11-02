@@ -1,0 +1,76 @@
+# CV content for the /cv/ page. Bullets accept Markdown (links, *emphasis*).
+experience:
+  - company: Tiger Analytics
+    role: Data Scientist (AI Engineer)
+    location: Chicago, IL
+    dates: Feb 2025 – present
+    bullets:
+      - Led development of an agentic extraction and retrieval pipeline (OCR, LLM agents, structured outputs, guardrails) on Databricks, cutting review from 60 min to 30 sec per contract and screening all 60k+ contracts.
+      - Enabled $75M in identified overpayments ($8M recovered in year one) by joining extracted contract terms with claims and provider data; grew audit coverage from 180 to 5,000+ hospitals.
+      - Designed async batch inference (OpenAI Batch API) and sub-agent decomposition, projected to cut LLM cost 50%.
+      - Developed PySpark and Delta Lake pipelines for OCR cleanup, chunking and deduplication with idempotent reruns.
+      - Built an evaluation suite with golden datasets, slice- and cohort-based metrics, regression tests, human-in-the-loop review and release gating, cutting evaluation time from 10 hrs to 1 min.
+      - Built PHI masking agents and guardrails; enforced HIPAA access controls with RBAC and service principals.
+      - Shipped CI/CD with Databricks Asset Bundles, GitHub Actions and Jenkins; deployed models on Azure AI Foundry.
+      - Led discovery and solution design for healthcare AI clients; coordinated onshore and offshore delivery teams.
+      - Packaged reusable agent tools (tool calling, MCP prototypes) and agents.md team skills; led agentic coding demos.
+
+  - company: EXL
+    role: Lead Assistant Manager (Senior Data Scientist)
+    location: Boston, MA
+    dates: Sep 2024 – Feb 2025
+    bullets:
+      - Built hybrid RAG retrieval on BigTable over 30+ sources for a Fortune-10 healthcare firm's assistant used by 2,000+ service reps; raised accuracy 60% and recall 50% via embedding selection and query augmentation.
+      - Fine-tuned intent and entity models (PyTorch, Hugging Face, PEFT) for low-cost routing; built LLM-as-a-judge evals.
+
+  - company: Zoho Corporation
+    role: Member Technical Staff (Lead ML Engineer)
+    location: India
+    dates: Jun 2018 – Jul 2022
+    bullets:
+      - Led a team of 5+ ML engineers and interns building a Transformer-based [grammatical error correction system](https://www.zoho.com/writer/ai-writing-assistant.html) — NLP services that process tens to hundreds of millions of sentences per day.
+      - Trained Transformer seq2seq models with multi-GPU distributed training in PyTorch Lightning; raised precision and F0.5 by up to 10% with synthetic data, semi-supervised learning and augmentation.
+      - Scaled real-time inference from 40 to 20,000 RPS with quantization, distillation, pruning, TorchScript and ONNX Runtime on Triton Inference Server, for 2x throughput and 1.5x speedup.
+      - Led the CPU-to-GPU migration with NVIDIA Nsight profiling — 50% lower latency and 7x throughput.
+      - Built data pipelines for noisy user text and generated rule-based and model-based synthetic error data.
+      - Deployed distilled GPT-2 rerankers and monitored bias, model drift and concept drift in production.
+
+skills:
+  - area: Agentic AI & LLMs
+    items: OpenAI API, OpenAI Agents SDK, Azure AI Foundry Agents, multi-agent orchestration, sub-agents, LangChain, LangGraph, tool calling, MCP, structured outputs, RAG, AI guardrails, DSPy, Claude Code, agents.md
+  - area: LLMOps
+    items: LLM-as-a-judge, OpenAI Batch API, cost optimization, MLflow, Databricks and Azure monitoring
+  - area: ML
+    items: PyTorch, PyTorch Lightning, Hugging Face Transformers, PEFT, scikit-learn, ONNX Runtime, Triton, NVIDIA Nsight
+  - area: Data & Cloud
+    items: Python, SQL, Bash, Databricks (PySpark, Delta Lake, Unity Catalog, Workflows, Asset Bundles), Azure AI Foundry, GCP (BigQuery, BigTable), Docker, GitHub Actions, Jenkins, FastAPI
+  - area: Responsible AI & Healthcare
+    items: HIPAA, PHI de-identification, RBAC, CPT/HCPCS and revenue codes, payment integrity
+
+education:
+  - degree: MS in Computing, Artificial Intelligence
+    school: University of Utah
+    location: Salt Lake City, UT
+    dates: Aug 2022 – Aug 2024
+
+projects:
+  - name: SalASR
+    url: https://github.com/jacobkj314/salASR/
+    text: Saliency methods for a fine-tuned Whisper speech recognition model.
+  - name: Explainable Deep Learning
+    url: https://github.com/gurunathparasaram/explainable_deep_learning
+    text: Experiments with explanation methods for deep learning models.
+  - name: Llama-3-70B distributed training
+    text: Compared FSDP and DeepSpeed for training Llama-3-70B on 8 GPUs.
+
+# Three short highlights for the Home page ("Selected work").
+highlights:
+  - title: Agentic AI for healthcare contracts
+    where: Tiger Analytics · 2025–present
+    text: OCR, LLM agents, structured outputs and guardrails on Databricks. Review time per contract went from 60 minutes to 30 seconds across 60k+ contracts.
+  - title: Hybrid RAG for a service assistant
+    where: EXL · 2024–2025
+    text: Retrieval over 30+ sources for an assistant used by 2,000+ service reps. Accuracy up 60% and recall up 50%.
+  - title: Grammar correction at scale
+    where: Zoho · 2018–2022
+    text: Led a team building Transformer-based grammatical error correction. Scaled real-time inference from 40 to 20,000 RPS.

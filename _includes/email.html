@@ -1,0 +1,2 @@
+{%- assign p = site.data.profile -%}
+<a class="email-link" href="#contact" data-user="{{ p.email_user }}" data-domain="{{ p.email_domain }}">{{ p.email_user }} [at] {{ p.email_domain | replace: ".", " [dot] " }}</a>

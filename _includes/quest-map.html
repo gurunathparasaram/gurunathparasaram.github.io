@@ -1,0 +1,19 @@
+{%- comment -%} The level-select map. include.id must be unique on the page. {%- endcomment -%}
+<div class="quest" id="{{ include.id }}" data-current="{{ page.level }}">
+  <svg class="quest-trail" aria-hidden="true" focusable="false"><path class="trail-bg"/><path class="trail-fg"/></svg>
+  <ol class="quest-nodes" aria-label="Levels">
+    {%- for l in site.data.levels -%}
+    <li class="quest-node" data-level="{{ l.id }}">
+      <a class="quest-link" href="{{ l.url | relative_url }}"{% if l.id == page.level %} aria-current="page"{% endif %}>
+        <span class="quest-orb">{% include icon.html name=l.icon %}<span class="quest-star" aria-hidden="true">{% include icon.html name="star" %}</span></span>
+        <span class="quest-label"><span class="quest-num">LV {{ forloop.index }}</span><span class="quest-title">{{ l.title }}</span><span class="quest-hint">{{ l.hint }}</span></span>
+        <span class="visually-hidden quest-state"></span>
+      </a>
+    </li>
+    {%- endfor -%}
+  </ol>
+  <span class="quest-avatar" aria-hidden="true">
+    <svg viewBox="0 0 32 40" width="32" height="40"><ellipse cx="16" cy="37" rx="8" ry="2.5" class="av-shadow"/><path d="M16 2c7 0 11 5 11 11 0 8-11 20-11 20S5 21 5 13C5 7 9 2 16 2z" class="av-body"/><circle cx="12.5" cy="12" r="1.8" class="av-eye"/><circle cx="19.5" cy="12" r="1.8" class="av-eye"/><path d="M12.5 17c2 1.6 5 1.6 7 0" class="av-smile"/></svg>
+  </span>
+</div>
+<p class="quest-help">Use the arrow keys to move, Enter to open a level. Stars mark levels you have visited.</p>

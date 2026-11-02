@@ -1,8 +1,8 @@
 _site
 .sass-cache
+.jekyll-cache
+.jekyll-metadata
 .DS_Store
-*.sublime-project
-*.sublime-workspace
-codekit-config.json
+vendor
 node_modules
-_asset_bundler_cache
+Gemfile.lock

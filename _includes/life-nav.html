@@ -1,0 +1,8 @@
+<nav class="subnav" aria-label="Life">
+  <ul>
+    {%- assign subs = "Overview|/life/,Travel|/life/travel/,Reading|/life/reading/,Telugu|/life/telugu/,Feed|/life/feed/" | split: "," -%}
+    {%- for s in subs -%}{%- assign parts = s | split: "|" -%}
+    <li><a href="{{ parts[1] | relative_url }}"{% if page.url == parts[1] %} aria-current="page"{% endif %}>{{ parts[0] }}</a></li>
+    {%- endfor -%}
+  </ul>
+</nav>
