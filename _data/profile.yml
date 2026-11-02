@@ -5,26 +5,38 @@ role: AI Engineer
 photo: /assets/img/gurunath.jpg
 photo_alt: Gurunath Parasaram, smiling, wearing glasses and a dark jacket, with snowy pine trees behind him.
 
+# Figures stay general on the public site ($xx M, xxK RPS, "tens of thousands").
+# The payment-integrity result belongs to a multi-team program; credit Gurunath
+# with leading its AI core, never with finding the money alone.
 summary: >-
-  AI Engineer with 6+ years building production ML and LLM systems. Most
-  recently led development of agentic AI that screens 60k+ healthcare
-  contracts and surfaced $75M in identified overpayments. Earlier led a team
-  building NLP services that process tens to hundreds of millions of sentences
-  per day at up to 20,000 RPS.
+  AI Engineer with 6+ years building production ML and LLM systems. Led the AI
+  core of a payment-integrity program that identified $xx M in overpayments.
+  Earlier led a team building NLP services that process tens to hundreds of
+  millions of sentences per day at up to xxK RPS.
 
-# Optional one-line note shown under the summary, e.g. the roles you are
-# open to. Leave empty to hide it.
+# Longer "About" paragraph, shown at the top of the CV page.
+about: >-
+  At Tiger Analytics I lead technical development of the agentic AI core of a
+  multi-team healthcare payment-integrity program. It cut contract review from
+  about an hour to seconds, made every contract in the portfolio searchable, and
+  helped the program identify $xx M in overpayments. I own the AI system end to
+  end: multi-agent design, LLM evaluation, AI guardrails for sensitive data, cost
+  and latency, and MLOps/LLMOps in the cloud. I also lead client discovery and
+  solution design for healthcare AI projects, work with business and legal leads
+  on rollout and results, and coach teams on agentic coding and AI best practices.
+
+# Optional one-line note shown under the summary (for example a current focus).
 availability: ""
 
 # Key numbers shown as small tiles on the Home page.
 stats:
   - value: "6+ yrs"
     label: production ML and LLM systems
-  - value: "60k+"
-    label: healthcare contracts screened by agentic AI
-  - value: "$75M"
-    label: in identified overpayments
-  - value: "20,000 RPS"
+  - value: "Hour → seconds"
+    label: contract review time with agentic AI
+  - value: "$xx M"
+    label: in overpayments identified by a program whose AI core I led
+  - value: "xxK RPS"
     label: peak real-time NLP inference
 
 # Focus areas shown as chips on the Home page.

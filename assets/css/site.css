@@ -92,6 +92,7 @@ blockquote { margin: 1.2em 0; padding: .2em 1em; border-left: 3px solid var(--ac
 [lang="te"] { font-family: var(--font-te); }
 .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 16px; }
 @media (min-width: 640px) { .wrap { padding: 0 24px; } }
+[hidden] { display: none !important; }
 .visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .muted { color: var(--muted); }
 .small { font-size: .875rem; }

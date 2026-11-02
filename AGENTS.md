@@ -9,7 +9,10 @@ Humans: see `README.md`. This file is excluded from the site build.
 - No phone number. No home city or street; the site shows the role and links only.
 - Keep the Tiger Analytics role title as **Data Scientist**, matching the resume on file. Other roles are as in `_data/cv.yml`.
 - Experience on the site stays short: 1-3 sentences per role (`summary`) plus a one-line `stack`. The full resume is the PDF at `assets/cv.pdf`.
-- Plain, factual wording. No superlatives or inflated adjectives. Numbers only when they come from the resume.
+- Plain, factual wording. No superlatives or inflated adjectives.
+- Figures stay general (matching LinkedIn): `$xx M`, `$x M`, `xxK RPS`, "tens of thousands of contracts", "thousands of service reps". Never the exact dollar, contract or RPS numbers.
+- The payment-integrity result belongs to a multi-team program. Credit Gurunath with leading its AI core ("Led the AI core of a payment-integrity program that identified $xx M in overpayments"); never say he alone found, saved or surfaced the money.
+- No job-seeking language ("open to work", "looking for").
 - News: blog posts are added automatically. `_data/news.yml` is for manual items (LinkedIn posts, talks). No career or education updates.
 - Plain and game mode must show the same pages and content. Add pages through `_data/levels.yml`; never add content that only one mode shows.
 

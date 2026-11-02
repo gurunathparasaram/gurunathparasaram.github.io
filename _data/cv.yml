@@ -7,13 +7,12 @@ experience:
     location: USA
     dates: Feb 2025 – present
     summary: >-
-      Lead development of an end-to-end generative AI information extraction and retrieval
-      system: OCR, multi-agent LLM workflows with structured outputs and guardrails, and
-      idempotent PySpark pipelines on Databricks. It cut processing from 60 minutes to
-      30 seconds per document across 60k+ documents and surfaced $75M in identified overpayments.
-      I also built the evaluation harness (golden datasets, statistical and slice metrics,
-      human-in-the-loop review) that cut evaluation from hours to 1 minute, and led latency
-      and cost work across the inference stack, including batch inference and sub-agent decomposition.
+      Built the AI core of a multi-team payment-integrity program that identified $xx M in
+      overpayments ($x M recovered in year one), scaling automated audits from hundreds to
+      thousands of hospitals. Lead the agentic extraction and retrieval system end to end:
+      OCR, multi-agent LLM workflows with structured outputs and guardrails, PySpark pipelines
+      on Databricks, an evaluation harness that cut evaluation from hours to 1 minute, and
+      latency and cost work across the inference stack.
     stack: Python, SQL, PySpark, Databricks, LLM agents, OpenAI API, MLflow, Azure AI Foundry
 
   - company: EXL
@@ -21,7 +20,7 @@ experience:
     location: USA
     dates: Sep 2024 – Feb 2025
     summary: >-
-      Built hybrid RAG retrieval on GCP for an assistant used by 2,000+ service reps,
+      Built hybrid RAG retrieval on GCP for an assistant used by thousands of service reps,
       raising search accuracy 60% and recall 50% through embedding selection and query
       augmentation. Fine-tuned intent and entity models and built offline evaluation pipelines.
     stack: Python, PyTorch, Hugging Face, PEFT, GCP, vector and hybrid search
@@ -42,7 +41,7 @@ experience:
     summary: >-
       Led a team building a Transformer-based [grammatical error correction system](https://www.zoho.com/writer/ai-writing-assistant.html)
       that processes tens to hundreds of millions of sentences per day. Scaled real-time inference
-      from 40 to 20,000 RPS with quantization, distillation and a CPU-to-GPU migration
+      to xxK RPS with quantization, distillation and a CPU-to-GPU migration
       (50% lower latency, 7x throughput).
     stack: PyTorch Lightning, Transformers, ONNX Runtime, Triton, NVIDIA Nsight
 
@@ -76,12 +75,12 @@ projects:
 
 # Home page "Selected work": one or two sentences each.
 highlights:
-  - title: Generative AI extraction and retrieval
+  - title: Agentic AI for payment integrity
     where: Tiger Analytics · 2025–present
-    text: Multi-agent LLM system with structured outputs, guardrails and a statistical evaluation harness. 60 minutes to 30 seconds per document across 60k+ documents.
+    text: Led the AI core of a payment-integrity program that identified $xx M in overpayments. Contract review went from about an hour to seconds across tens of thousands of contracts.
   - title: Hybrid RAG
     where: EXL · 2024–2025
-    text: Retrieval for an assistant used by 2,000+ service reps. Search accuracy up 60%, recall up 50%.
+    text: Retrieval for an assistant used by thousands of service reps. Search accuracy up 60%, recall up 50%.
   - title: NLP inference at scale
     where: Zoho · 2018–2022
-    text: Transformer-based grammar correction, scaled from 40 to 20,000 RPS with quantization, distillation and GPU serving.
+    text: Transformer-based grammar correction, scaled to xxK RPS with quantization, distillation and GPU serving.
