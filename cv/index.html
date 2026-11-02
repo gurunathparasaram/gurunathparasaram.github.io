@@ -2,7 +2,7 @@
 layout: default
 title: CV
 level: cv
-description: CV of Gurunath Parasaram, AI Engineer in Chicago.
+description: CV of Gurunath Parasaram, AI Engineer.
 redirect_from:
   - /resume/
 ---
@@ -11,13 +11,13 @@ redirect_from:
   <header class="cv-head">
     <div>
       <h1 class="page-title">{{ p.full_name }}</h1>
-      <p class="cv-sub">Goes by Gurunath · {{ p.role }} · {{ p.location }}</p>
+      <p class="cv-sub">Goes by Gurunath · {{ p.role }}</p>
       <p class="cv-contact">{% include email.html %}{% for l in p.links %} · <a href="{{ l.url }}" rel="me noopener">{{ l.label }}</a>{% endfor %}</p>
     </div>
     <a class="btn btn-primary cv-pdf" href="{{ '/assets/cv.pdf' | relative_url }}" download>{% include icon.html name="download" %}Download PDF</a>
   </header>
 
-  <section aria-labelledby="cv-summary"><h2 id="cv-summary" class="section-title">Summary</h2><p>{{ p.summary }}</p></section>
+  <section aria-labelledby="cv-summary"><h2 id="cv-summary" class="section-title">Summary</h2><p>{{ p.summary }}</p><p class="muted">This page is a short overview. The PDF has the full resume.</p></section>
 
   <section aria-labelledby="cv-exp">
     <h2 id="cv-exp" class="section-title">Experience</h2>
@@ -28,9 +28,8 @@ redirect_from:
           <h3>{{ job.company }} <span class="job-role">— {{ job.role }}</span></h3>
           <p class="job-meta">{{ job.location }} · {{ job.dates }}</p>
         </div>
-        <ul class="job-bullets">
-          {%- for b in job.bullets %}<li>{{ b | markdownify | remove: "<p>" | remove: "</p>" | strip }}</li>{% endfor %}
-        </ul>
+        <p class="job-summary">{{ job.summary | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+        {%- if job.stack %}<p class="job-stack"><span class="visually-hidden">Stack: </span>{{ job.stack }}</p>{% endif %}
       </li>
       {%- endfor %}
     </ol>
@@ -46,7 +45,7 @@ redirect_from:
   <section aria-labelledby="cv-edu">
     <h2 id="cv-edu" class="section-title">Education</h2>
     {%- for e in cv.education %}
-    <div class="job-head"><h3>{{ e.degree }}</h3><p class="job-meta">{{ e.school }}, {{ e.location }} · {{ e.dates }}</p></div>
+    <div class="job-head"><h3>{{ e.degree }}</h3><p class="job-meta">{{ e.school }} · {{ e.dates }}</p></div>
     {%- endfor %}
   </section>
 

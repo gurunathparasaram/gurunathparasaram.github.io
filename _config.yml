@@ -2,7 +2,7 @@
 # Site settings. Restart `bundle exec jekyll serve` after editing.
 # ------------------------------------------------------------------
 title: Gurunath Parasaram
-description: AI Engineer in Chicago. Production ML and LLM systems, agentic AI, healthcare AI.
+description: AI Engineer. Production ML and LLM systems, agentic AI, healthcare AI.
 url: https://gurunathparasaram.github.io
 baseurl: ""
 lang: en
@@ -28,16 +28,11 @@ kramdown:
   input: GFM
   auto_ids: true
 permalink: /blog/:year/:month/:day/:title/
-timezone: America/Chicago
 
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-redirect-from
-
-feed:
-  path: blog/feed.xml
 
 defaults:
   - scope: { path: "", type: posts }
@@ -45,6 +40,7 @@ defaults:
 
 exclude:
   - README.md
+  - AGENTS.md
   - LICENSE
   - Gemfile
   - Gemfile.lock

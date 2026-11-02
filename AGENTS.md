@@ -1,0 +1,40 @@
+# Notes for AI agents working on this repo
+
+This is Gurunath Parasaram's personal site (Jekyll, built by GitHub Pages from `main`).
+Humans: see `README.md`. This file is excluded from the site build.
+
+## Content rules (always follow)
+- Never name clients or the companies a client project was for, internal product or project names, or the US states tied to client work.
+- Never mention immigration, visa or work-authorization status.
+- No phone number. No home city or street; the site shows the role and links only.
+- Keep the Tiger Analytics role title as **Data Scientist**, matching the resume on file. Other roles are as in `_data/cv.yml`.
+- Experience on the site stays short: 1-3 sentences per role (`summary`) plus a one-line `stack`. The full resume is the PDF at `assets/cv.pdf`.
+- Plain, factual wording. No superlatives or inflated adjectives. Numbers only when they come from the resume.
+- News (`_data/news.yml`) is for site, writing, talks, education and personal updates, not job changes.
+
+## Where content lives
+- `_data/profile.yml` (summary, links, numbers), `_data/cv.yml`, `_data/news.yml`, `_data/travel.yml`, `_data/reading.yml`, `_data/telugu.yml`, `_data/levels.yml` (game mode).
+- Blog posts: `_posts/`.
+- One stylesheet (`assets/css/site.css`) and one script (`assets/js/site.js`). No build step and no npm.
+
+## How to write a blog post
+1. Create `_posts/YYYY-MM-DD-short-title.md`, for example `_posts/2026-11-15-evaluating-llm-agents.md`. The post is served at `/blog/YYYY/MM/DD/short-title/`.
+2. Start with front matter. Only `title` is required; the layout and the game-mode level are set by `_config.yml` defaults.
+   ```yaml
+   ---
+   title: Evaluating LLM agents with golden datasets
+   description: One or two sentences for the blog list and link previews.
+   tags: [llm, evaluation]
+   ---
+   ```
+3. Write Markdown (GFM): `##` headings, lists, links, tables and fenced code blocks with a language.
+4. Images go in `assets/img/blog/` and need alt text: `![What the image shows](/assets/img/blog/diagram.png)`.
+5. Posts appear on `/blog/` and under "Latest writing" on the home page automatically. There is no RSS feed.
+
+## Checking a change
+```bash
+bundle exec jekyll build
+```
+Then serve `_site/` and check both modes: `?mode=plain` and `?mode=game` (the mode is stored in `localStorage` key `gp-mode`).
+Check light and dark themes, a 390px-wide viewport, and the browser console for errors.
+Only GitHub Pages-supported plugins may be added (see `_config.yml`).

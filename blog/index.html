@@ -6,9 +6,9 @@ redirect_from:
   - /posts/
 ---
 <h1 class="page-title">Blog</h1>
-<p class="lede">Notes on building AI systems, and the occasional post about everything else. <a href="{{ '/blog/feed.xml' | relative_url }}">RSS feed</a>.</p>
+<p class="lede">Notes on building AI systems, and the occasional post about everything else.</p>
 {%- if site.posts.size == 0 %}
-<p>No posts yet.</p>
+<p class="muted">The first posts are on the way.</p>
 {%- else %}
 <ul class="post-list">
   {%- for post in site.posts %}

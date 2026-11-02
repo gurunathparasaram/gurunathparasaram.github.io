@@ -164,10 +164,7 @@ html:not([data-mode="game"]) .game-only, .no-js .game-only { display: none !impo
 .card-icon .icon { width: 1.4rem; height: 1.4rem; }
 
 /* ---------- Home ---------- */
-.home-grid { display: grid; gap: 1.5rem 2.5rem; grid-template-columns: minmax(0, 1fr); grid-template-areas: "hero" "telugu" "stats" "work" "latest" "news"; }
-@media (min-width: 900px) {
-  .home-grid { grid-template-columns: minmax(0, 1fr) 20rem; grid-template-areas: "hero telugu" "stats telugu" "work work" "latest latest" "news news"; }
-}
+.home-grid { display: grid; gap: 1.5rem; grid-template-columns: minmax(0, 1fr); grid-template-areas: "hero" "stats" "work" "latest" "news"; }
 .hero { grid-area: hero; display: flex; gap: 1.75rem; align-items: flex-start; }
 .hero-photo { width: 9.5rem; border-radius: 22px; box-shadow: var(--shadow); flex: none; aspect-ratio: 250 / 320; object-fit: cover; }
 .hero-name { font-size: clamp(2.4rem, 6vw, 3.8rem); line-height: 1.05; margin-bottom: .35em; }
@@ -190,23 +187,6 @@ html:not([data-mode="game"]) .game-only, .no-js .game-only { display: none !impo
 .latest { grid-area: latest; }
 .news-wrap { grid-area: news; }
 
-/* Telugu panel */
-.telugu-panel { grid-area: telugu; position: relative; overflow: hidden; align-self: start; background: var(--warm-soft); color: var(--ink); border-radius: var(--radius); padding: 1.5rem 1.4rem 1.25rem; border: 1px solid color-mix(in srgb, var(--warm) 25%, transparent); }
-@media (min-width: 900px) { .telugu-panel { position: sticky; top: 5.5rem; } }
-.kolam { position: absolute; inset: auto -30px -30px auto; width: 170px; height: 170px; opacity: .22; color: var(--warm);
-  background:
-    radial-gradient(circle, currentColor 2.2px, transparent 2.6px) 0 0 / 28px 28px,
-    radial-gradient(circle, transparent 9px, currentColor 9.5px, currentColor 11px, transparent 11.5px) 14px 14px / 28px 28px;
-  border-radius: 50%; pointer-events: none; }
-.panel-kicker { font: 600 .8rem var(--font-body); letter-spacing: .08em; text-transform: uppercase; color: var(--warm); margin-bottom: 1rem; }
-.panel-kicker [lang="te"] { text-transform: none; letter-spacing: 0; font-size: 1rem; }
-.te-lines { list-style: none; margin: 0 0 1rem; padding: 0; position: relative; }
-.te-lines li { margin-bottom: 1rem; }
-.te-lines .te { font-size: 1.35rem; line-height: 1.5; margin: 0; font-weight: 600; }
-.te-lines .gloss { margin: .15rem 0 0; font-size: .88rem; color: var(--muted); }
-.gloss .rom { font-style: italic; display: block; }
-.panel-more { position: relative; font-weight: 600; color: var(--warm); }
-
 /* News ticker */
 .news { margin-top: 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
 .news-head { display: flex; align-items: center; justify-content: space-between; padding: .9rem 1.25rem; border-bottom: 1px solid var(--line); }
@@ -215,7 +195,7 @@ html:not([data-mode="game"]) .game-only, .no-js .game-only { display: none !impo
 .news-toggle .when-paused, .news-toggle[aria-pressed="true"] .when-playing { display: none; }
 .news-toggle[aria-pressed="true"] .when-paused { display: inline-flex; align-items: center; gap: .35rem; }
 .news-toggle .when-playing { display: inline-flex; align-items: center; gap: .35rem; }
-.news-viewport { height: 15rem; overflow-y: auto; overscroll-behavior: contain; position: relative; }
+.news-viewport { height: 10rem; overflow-y: auto; overscroll-behavior: contain; position: relative; }
 .news.is-animated .news-viewport { scrollbar-width: none; mask-image: linear-gradient(transparent, #000 1.2rem, #000 calc(100% - 1.6rem), transparent); }
 .news.is-animated .news-viewport::-webkit-scrollbar { display: none; }
 .news-list { list-style: none; margin: 0; padding: .5rem 1.25rem; }
@@ -248,8 +228,8 @@ html:not([data-mode="game"]) .game-only, .no-js .game-only { display: none !impo
 .job-head h3 { font-size: 1.15rem; margin-bottom: .1rem; }
 .job-role { font-weight: 500; }
 .job-meta { color: var(--muted); font-size: .92rem; margin-bottom: .5rem; }
-.job-bullets { margin: 0; padding-left: 1.1rem; }
-.job-bullets li { margin-bottom: .35rem; }
+.job-summary { margin-bottom: .4rem; max-width: 46rem; }
+.job-stack { font: .85rem/1.5 var(--font-mono); color: var(--muted); margin: 0; }
 .skills { margin: 0; display: grid; gap: .75rem; }
 .skills div { display: grid; grid-template-columns: 13rem 1fr; gap: 1rem; }
 .skills dt { font-weight: 700; }
@@ -258,6 +238,11 @@ html:not([data-mode="game"]) .game-only, .no-js .game-only { display: none !impo
 .projects { padding-left: 1.1rem; }
 
 /* ---------- Life ---------- */
+.states { list-style: none; margin: 0 0 2rem; padding: 0; display: grid; gap: .5rem; grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr)); }
+.state { padding: .5rem .75rem; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--muted); font-size: .92rem; }
+.state.is-visited { background: var(--accent-soft); border-color: var(--accent); color: var(--ink); font-weight: 600; }
+.state-meta { display: block; font-weight: 400; font-size: .8rem; color: var(--muted); }
+:root[data-mode="game"] .state { border: 2px solid var(--edge); border-radius: 4px; }
 .subnav ul { list-style: none; padding: 0; margin: 0 0 1.5rem; display: flex; flex-wrap: wrap; gap: .4rem; }
 .subnav a { display: block; padding: .3rem .85rem; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; color: var(--ink); font-size: .92rem; }
 .subnav a[aria-current="page"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
@@ -273,8 +258,8 @@ html:not([data-mode="game"]) .game-only, .no-js .game-only { display: none !impo
 .places { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); }
 .place { display: grid; gap: .75rem; }
 .place img { border-radius: 10px; width: 100%; aspect-ratio: 4/3; object-fit: cover; }
-.place h2 { font-size: 1.2rem; margin-bottom: .2rem; display: flex; align-items: center; gap: .35rem; }
-.place h2 .icon { color: var(--warm); }
+.place h3 { font-size: 1.2rem; margin-bottom: .2rem; display: flex; align-items: center; gap: .35rem; }
+.place h3 .icon { color: var(--warm); }
 .place-country { font-weight: 400; color: var(--muted); }
 
 .shelves { display: grid; gap: 0 2rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
@@ -322,8 +307,7 @@ html:not([data-mode="game"]) .game-only, .no-js .game-only { display: none !impo
 :root[data-mode="game"] .stats li,
 :root[data-mode="game"] .news,
 :root[data-mode="game"] .book,
-:root[data-mode="game"] .world,
-:root[data-mode="game"] .telugu-panel { border: 2px solid var(--edge); box-shadow: var(--drop); border-radius: 6px; }
+:root[data-mode="game"] .world { border: 2px solid var(--edge); box-shadow: var(--drop); border-radius: 6px; }
 :root[data-mode="game"] .btn { border: 2px solid var(--edge); border-radius: 6px; box-shadow: 3px 3px 0 var(--edge); }
 :root[data-mode="game"] .btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--edge); }
 :root[data-mode="game"] .hero-photo { border-radius: 6px; border: 3px solid var(--edge); box-shadow: var(--drop); image-rendering: auto; }
