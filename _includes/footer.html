@@ -1,10 +1,9 @@
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <p>© {{ site.time | date: "%Y" }} {{ site.data.profile.name }} · {{ site.data.profile.location }}</p>
+    <p>© {{ site.time | date: "%Y" }} {{ site.data.profile.name }}</p>
     <p class="footer-links">
       {% include email.html %}
       {%- for l in site.data.profile.links %} · <a href="{{ l.url }}" rel="me noopener">{{ l.label }}</a>{% endfor %}
-      · <a href="{{ '/blog/feed.xml' | relative_url }}">RSS</a>
     </p>
     <p class="credits">Built with Jekyll on GitHub Pages. Fonts: Fraunces, Noto Sans Telugu and Press Start 2P (SIL Open Font License). Icons and illustrations drawn for this site.</p>
   </div>

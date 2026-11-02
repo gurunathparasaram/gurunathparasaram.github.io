@@ -16,7 +16,7 @@ redirect_from:
   <section class="hero" aria-labelledby="hero-name">
     <img class="hero-photo" src="{{ p.photo | relative_url }}" alt="{{ p.photo_alt }}" width="250" height="320">
     <div class="hero-text">
-      <p class="eyebrow">{{ p.role }} · {{ p.location }}</p>
+      <p class="eyebrow">{{ p.role }}</p>
       <h1 id="hero-name" class="hero-name">{{ p.name }}</h1>
       <p class="hero-summary">{{ p.summary }}</p>
       {%- if p.availability != "" %}<p class="availability">{{ p.availability }}</p>{% endif %}
@@ -30,8 +30,6 @@ redirect_from:
       </p>
     </div>
   </section>
-
-  {% include telugu-panel.html %}
 
   <section class="stats" aria-label="Highlights in numbers">
     <ul class="focus" aria-label="Focus areas">

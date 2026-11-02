@@ -1,17 +1,5 @@
 # Telugu content. `te` is Telugu script, `rom` a romanization, `en` the English gloss.
 
-# Home page side panel.
-welcome:
-  - te: "నమస్కారం! నా పేరు గురునాథ్."
-    rom: "Namaskāram! Nā pēru Gurunāth."
-    en: "Hello! My name is Gurunath."
-  - te: "నేను చికాగోలో ఉంటాను."
-    rom: "Nēnu Cikāgōlō uṇṭānu."
-    en: "I live in Chicago."
-  - te: "మీకు స్వాగతం!"
-    rom: "Mīku svāgatam!"
-    en: "Welcome!"
-
 # Life > Telugu: everyday phrases.
 phrases:
   - te: "నమస్కారం"

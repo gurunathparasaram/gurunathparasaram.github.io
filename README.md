@@ -19,12 +19,12 @@ The theme button (sun/moon) switches light and dark; by default the site follows
 
 | What | File |
 | --- | --- |
-| Name, summary, links, photo, home-page numbers | `_data/profile.yml` |
-| CV (experience, skills, education, projects, home highlights) | `_data/cv.yml` |
+| Name, summary, links, photo, focus areas, home-page numbers | `_data/profile.yml` |
+| CV (short role summaries, skills, education, projects, home highlights) | `_data/cv.yml` |
 | News on the home page | `_data/news.yml` |
-| Travel places | `_data/travel.yml` |
+| Travel (US states, other places) | `_data/travel.yml` |
 | Books | `_data/reading.yml` |
-| Telugu welcome panel, phrases and notes | `_data/telugu.yml` |
+| Telugu phrases and notes | `_data/telugu.yml` |
 | Game levels (order, titles, icons) | `_data/levels.yml` |
 | Blog posts | `_posts/` |
 | Site settings (Twitter handle, default mode, map) | `_config.yml` |
@@ -55,9 +55,9 @@ The news box scrolls slowly and loops when the list is taller than the box. It p
    ---
    ```
 3. Write the post in Markdown below that. Put images in `assets/img/blog/` and always add alt text: `![What the image shows](/assets/img/blog/diagram.png)`.
-4. Commit and push. The post appears at `/blog/YYYY/MM/DD/short-title/`, on the Blog page, in "Latest writing" on the home page, and in the RSS feed (`/blog/feed.xml`).
+4. Commit and push. The post appears at `/blog/YYYY/MM/DD/short-title/`, on the Blog page and in "Latest writing" on the home page.
 
-The sample post `_posts/2026-11-01-how-to-write-a-post.md` walks through the same steps. Delete it once you have real posts.
+`AGENTS.md` has the same steps for AI coding agents, plus the content rules for this site.
 
 ### Add a book
 Add to `_data/reading.yml`:
@@ -73,24 +73,20 @@ Add to `_data/reading.yml`:
 
 The three entries marked `sample: true` are placeholders that show a "Sample entry" badge. Replace or delete them.
 
-### Add a travel place
-Add to `_data/travel.yml`:
+### Update travel
+In `_data/travel.yml`, mark a US state as visited:
 
 ```yaml
-- name: Hyderabad
-  country: India
-  lat: 17.39           # decimal degrees; south and west are negative
-  lon: 78.49
-  when: Dec 2026
-  note: Optional one-liner.
-  photo: /assets/img/travel/hyderabad.jpg   # optional, keep under ~300 KB
-  photo_alt: Charminar at dusk              # required if photo is set
+  - { name: Colorado, visited: true, when: "2025", note: Rocky Mountain NP }
 ```
 
-The pin is placed on the world map automatically. Turn the map off with `travel_map: false` in `_config.yml`.
+Visited states are highlighted on Life › Travel. For cities or countries outside that list, add entries under `places:` (name, country, lat, lon, when, note, optional photo with photo_alt). They appear as cards with pins on a world map.
 
 ### Add Telugu phrases or notes
-Edit `_data/telugu.yml`. `welcome` feeds the panel on the home page; `phrases` and `notes` feed Life › Telugu. Each phrase has `te` (Telugu script), `rom` (romanization) and `en` (English gloss). Telugu text is marked `lang="te"` automatically.
+Edit `_data/telugu.yml`. `phrases` and `notes` feed Life › Telugu. Each phrase has `te` (Telugu script), `rom` (romanization) and `en` (English gloss). Telugu text is marked `lang="te"` automatically.
+
+### Update the CV
+Each role in `_data/cv.yml` has a 1-3 sentence `summary` and a one-line `stack`. Keep it short; the PDF has the full resume.
 
 ### Add the CV PDF
 Export the PDF from Overleaf and save it as **`assets/cv.pdf`**, replacing the one-page placeholder that is there now. The "Download PDF" buttons on Home and CV already point to it.
@@ -114,10 +110,10 @@ bundle exec jekyll serve --livereload
 Then open http://localhost:4000. On Ruby 3+ the `webrick` gem in the `Gemfile` is needed for `serve`.
 
 ## Deploying
-Push to `main`. GitHub Pages (Settings › Pages › "Deploy from a branch", `main`, `/ (root)`) builds and publishes the site in a minute or two. Only the plugins GitHub Pages supports are used: `jekyll-feed`, `jekyll-seo-tag`, `jekyll-sitemap` and `jekyll-redirect-from`. Old URLs (`/resume/`, `/travel/`, `/contact/`, `/aboutme/`, `/posts/`) redirect to the new pages.
+Push to `main`. GitHub Pages (Settings › Pages › "Deploy from a branch", `main`, `/ (root)`) builds and publishes the site in a minute or two. Only the plugins GitHub Pages supports are used: `jekyll-seo-tag`, `jekyll-sitemap` and `jekyll-redirect-from`. Old URLs (`/resume/`, `/travel/`, `/contact/`, `/aboutme/`, `/posts/`) redirect to the new pages.
 
 ## Credits
 - Fonts from Google Fonts, all under the SIL Open Font License: [Fraunces](https://fonts.google.com/specimen/Fraunces), [Noto Sans Telugu](https://fonts.google.com/noto/specimen/Noto+Sans+Telugu) and [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P).
 - World map land outlines: [Natural Earth](https://www.naturalearthdata.com/) (public domain), via the [world-atlas](https://github.com/topojson/world-atlas) package (ISC), pre-rendered into `_includes/world-land-path.txt`.
-- Icons, the quest map, the avatar and the kolam-style dot pattern were drawn for this site.
+- Icons, the quest map and the avatar were drawn for this site.
 - Accessibility: semantic HTML, skip link, visible focus, keyboard-operable map (roving tabindex), `prefers-reduced-motion` support, and light and dark themes.

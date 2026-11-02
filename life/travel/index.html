@@ -5,36 +5,53 @@ level: travel
 redirect_from:
   - /travel/
 ---
-{%- assign places = site.data.travel -%}
+{%- assign states = site.data.travel.states -%}
+{%- assign visited = states | where: "visited", true -%}
+{%- assign places = site.data.travel.places -%}
 <h1 class="page-title">Travel</h1>
 {% include life-nav.html %}
-<p class="lede">Places I have lived in or visited.</p>
+<p class="lede">US states. The highlighted ones are states I have visited.</p>
 
-{%- if site.travel_map and places.size > 0 %}
-<figure class="world">
-  <svg class="world-map" viewBox="0 15 1000 400" role="img" aria-labelledby="world-title">
-    <title id="world-title">World map with {{ places.size }} marked places: {% for pl in places %}{{ pl.name }}{% unless forloop.last %}, {% endunless %}{% endfor %}.</title>
-    <path class="world-land" d="{% include world-land-path.txt %}"/>
-    {%- for pl in places %}
-    {%- assign x = pl.lon | plus: 180 | times: 2.7778 -%}
-    {%- assign y = 90 | minus: pl.lat | times: 2.7778 %}
-    <g class="world-pin" transform="translate({{ x | round: 1 }} {{ y | round: 1 }})"><circle class="pin-pulse" r="9"/><circle class="pin-dot" r="4.5"/></g>
+<section aria-labelledby="states-title">
+  <h2 id="states-title" class="section-title">US states <span class="count">{{ visited.size }} visited</span></h2>
+  <ul class="states">
+    {%- for st in states %}
+    <li class="state{% if st.visited %} is-visited{% endif %}">
+      <span class="state-name">{{ st.name }}</span>
+      {%- if st.visited %}<span class="visually-hidden"> (visited)</span>{% if st.when or st.note %}<span class="state-meta">{{ st.when }}{% if st.when and st.note %} · {% endif %}{{ st.note }}</span>{% endif %}{% endif %}
+    </li>
     {%- endfor %}
-  </svg>
-  <figcaption>Map: Natural Earth land outlines (public domain) via world-atlas.</figcaption>
-</figure>
-{%- endif %}
+  </ul>
+</section>
 
-<ul class="places">
-  {%- for pl in places %}
-  <li class="place card">
-    {%- if pl.photo %}<img src="{{ pl.photo | relative_url }}" alt="{{ pl.photo_alt }}" loading="lazy">{% endif %}
-    <div>
-      <h2>{% include icon.html name="pin" %}<span>{{ pl.name }}<span class="place-country">, {{ pl.country }}</span></span></h2>
-      <p class="card-where">{{ pl.when }}</p>
-      {%- if pl.note %}<p>{{ pl.note | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>{% endif %}
-    </div>
-  </li>
-  {%- endfor %}
-</ul>
-{%- if places.size < 3 %}<p class="muted">More places coming soon.</p>{% endif %}
+{%- if places and places.size > 0 %}
+<section aria-labelledby="places-title">
+  <h2 id="places-title" class="section-title">Other places</h2>
+  {%- if site.travel_map %}
+  <figure class="world">
+    <svg class="world-map" viewBox="0 15 1000 400" role="img" aria-labelledby="world-title">
+      <title id="world-title">World map with {{ places.size }} marked places: {% for pl in places %}{{ pl.name }}{% unless forloop.last %}, {% endunless %}{% endfor %}.</title>
+      <path class="world-land" d="{% include world-land-path.txt %}"/>
+      {%- for pl in places %}
+      {%- assign x = pl.lon | plus: 180 | times: 2.7778 -%}
+      {%- assign y = 90 | minus: pl.lat | times: 2.7778 %}
+      <g class="world-pin" transform="translate({{ x | round: 1 }} {{ y | round: 1 }})"><circle class="pin-pulse" r="9"/><circle class="pin-dot" r="4.5"/></g>
+      {%- endfor %}
+    </svg>
+    <figcaption>Map: Natural Earth land outlines (public domain) via world-atlas.</figcaption>
+  </figure>
+  {%- endif %}
+  <ul class="places">
+    {%- for pl in places %}
+    <li class="place card">
+      {%- if pl.photo %}<img src="{{ pl.photo | relative_url }}" alt="{{ pl.photo_alt }}" loading="lazy">{% endif %}
+      <div>
+        <h3>{% include icon.html name="pin" %}<span>{{ pl.name }}<span class="place-country">, {{ pl.country }}</span></span></h3>
+        <p class="card-where">{{ pl.when }}</p>
+        {%- if pl.note %}<p>{{ pl.note | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>{% endif %}
+      </div>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}

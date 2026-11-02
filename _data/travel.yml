@@ -1,19 +1,60 @@
-# Places for Life > Travel. Newest first.
-#   name, country: shown on the card
-#   lat, lon: decimal degrees (find them on any map; west/south are negative)
-#   when: free text, e.g. "2024" or "Mar 2025"
-#   note: optional one-liner (Markdown allowed)
-#   photo: optional path, e.g. /assets/img/travel/chicago.jpg (keep under ~300 KB)
-#   photo_alt: required when photo is set
-- name: Chicago
-  country: USA
-  lat: 41.88
-  lon: -87.63
-  when: 2025 – present
-  note: Home base.
-- name: Salt Lake City
-  country: USA
-  lat: 40.76
-  lon: -111.89
-  when: 2022 – 2024
-  note: Grad school at the University of Utah.
+# Life > Travel.
+#
+# states: US states. Set `visited: true` for the ones you have been to.
+#   Optional per state: when ("2024"), note ("Road trip")
+states:
+  - { name: Alabama }
+  - { name: Alaska }
+  - { name: Arizona }
+  - { name: Arkansas }
+  - { name: California }
+  - { name: Colorado }
+  - { name: Connecticut }
+  - { name: Delaware }
+  - { name: Florida }
+  - { name: Georgia }
+  - { name: Hawaii }
+  - { name: Idaho }
+  - { name: Illinois }
+  - { name: Indiana }
+  - { name: Iowa }
+  - { name: Kansas }
+  - { name: Kentucky }
+  - { name: Louisiana }
+  - { name: Maine }
+  - { name: Maryland }
+  - { name: Massachusetts }
+  - { name: Michigan }
+  - { name: Minnesota }
+  - { name: Mississippi }
+  - { name: Missouri }
+  - { name: Montana }
+  - { name: Nebraska }
+  - { name: Nevada }
+  - { name: New Hampshire }
+  - { name: New Jersey }
+  - { name: New Mexico }
+  - { name: New York }
+  - { name: North Carolina }
+  - { name: North Dakota }
+  - { name: Ohio }
+  - { name: Oklahoma }
+  - { name: Oregon }
+  - { name: Pennsylvania }
+  - { name: Rhode Island }
+  - { name: South Carolina }
+  - { name: South Dakota }
+  - { name: Tennessee }
+  - { name: Texas }
+  - { name: Utah, visited: true, when: "2022–2024", note: Grad school }
+  - { name: Vermont }
+  - { name: Virginia }
+  - { name: Washington }
+  - { name: West Virginia }
+  - { name: Wisconsin }
+  - { name: Wyoming }
+
+# places: optional cities or countries, shown as cards with pins on a world map.
+#   name, country, lat, lon (decimal degrees; south/west negative), when, note
+#   photo: optional, e.g. /assets/img/travel/hyderabad.jpg; photo_alt required with it
+places: []
