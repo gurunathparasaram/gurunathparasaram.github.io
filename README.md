@@ -1,120 +1,49 @@
 # gurunathparasaram.github.io
 
-Personal website of Gurunath Parasaram: https://gurunathparasaram.github.io/
+Personal website of Gurunath Parasaram: **https://gurunathparasaram.github.io/**
 
-A plain Jekyll site that GitHub Pages builds by itself. There is no theme gem, no npm and no build workflow. Content lives in data files and Markdown, and both site modes read from the same files.
+A small Jekyll site that GitHub Pages builds by itself: no theme gem, no npm and no build workflow. All content lives in data files (`_data/*.yml`) and Markdown, and both site modes read from the same files.
 
-## The two modes
+## Contents
+- [Docs](#docs)
+- [The site at a glance](#the-site-at-a-glance)
+- [Quick start](#quick-start)
+- [Backing up Claude settings](#backing-up-claude-settings)
+- [Credits](#credits)
+- [Changelog](#changelog)
 
-- **Plain mode** (the default) is a clean profile site.
-- **Game mode** turns the same pages into levels on a quest map: Home, Experience, Blog, Life, Travel, Reading, Telugu and Feed. It shows exactly the same content as plain mode; only the navigation and styling change. A bar under the header shows the current level, a progress bar of levels explored, previous/next buttons, a Map button, and **Exit to plain mode**.
+## Docs
 
-**Switching:** use the **Plain / Game** switch in the top-right of every page. The choice is saved in the visitor's browser (`localStorage`, key `gp-mode`); if storage is blocked the site still works and falls back to `default_mode` in `_config.yml`. You can link straight to a mode with `?mode=game` or `?mode=plain`.
+| Doc | For | What's in it |
+| --- | --- | --- |
+| [docs/content-guide.md](docs/content-guide.md) | Gurunath | How to update every part of the site: news, posts, experience, reading, travel, Telugu, X feed, PDF |
+| [docs/architecture.md](docs/architecture.md) | Anyone changing code | How the pages, modes, news box, map and styles work |
+| [docs/decisions.md](docs/decisions.md) | Everyone | What was decided and why, plus the open to-do list |
+| [AGENTS.md](AGENTS.md) | AI coding agents | Content rules that must always hold, and how to work in this repo |
+| [CLAUDE.md](CLAUDE.md) | Claude Code | Loads `AGENTS.md` as project memory |
 
-**Game controls:** press `M` to open the map; on the map, use the arrow keys (or Home/End) to move and Enter to open a level; Esc closes it. Visited levels get a star (`localStorage`, key `gp-visited`).
+None of these files are published on the site (see `exclude` in `_config.yml`).
 
-The theme button (sun/moon) switches light and dark; by default the site follows the system setting.
+`docs/claude-user-CLAUDE.md` holds Gurunath's working preferences for all projects; copy it to `~/.claude/CLAUDE.md` (see [Backing up Claude settings](#backing-up-claude-settings)).
 
-## Where things live
+## The site at a glance
 
-| What | File |
-| --- | --- |
-| Name, summary, links, photo, focus areas, home-page numbers | `_data/profile.yml` |
-| Experience page (short role summaries, skills, education, projects, home highlights) | `_data/experience.yml` |
-| News on the home page | `_data/news.yml` |
-| Travel (US states, other places) | `_data/travel.yml` |
-| Books | `_data/reading.yml` |
-| Telugu phrases and notes | `_data/telugu.yml` |
-| Game levels (order, titles, icons) | `_data/levels.yml` |
-| Blog posts | `_posts/` |
-| Site settings (Twitter handle, default mode, map) | `_config.yml` |
-| Styles / scripts | `assets/css/site.css`, `assets/js/site.js` |
+| Page | URL | Content from |
+| --- | --- | --- |
+| Home | `/` | `_data/profile.yml`, `_data/experience.yml` (highlights), `_data/news.yml` + blog posts |
+| Experience | `/experience/` | `_data/experience.yml`, `_data/profile.yml` (About) |
+| Blog | `/blog/` | `_posts/` |
+| Life | `/life/` | `_data/levels.yml` |
+| Life › Travel | `/life/travel/` | `_data/travel.yml` |
+| Life › Reading | `/life/reading/` | `_data/reading.yml` |
+| Life › Telugu | `/life/telugu/` | `_data/telugu.yml` |
+| Life › Feed | `/life/feed/` | `twitter_handle` in `_config.yml`, `_data/x_posts.yml` |
 
-## How to…
+**Two modes, same content.** Plain mode is a clean profile site. Game mode shows the same pages as levels on a quest map, with a progress bar and an **Exit to plain mode** button. The Plain/Game switch is in the top-right of every page; the choice is remembered in the browser.
 
-### News
-The News box on the home page fills itself:
-- **Blog posts** appear automatically (labelled "Blog") as soon as they are pushed.
-- **Everything else** (LinkedIn posts, talks, other updates) goes in `_data/news.yml` by hand:
+## Quick start
 
-```yaml
-- date: 2026-12-03                       # YYYY-MM-DD, YYYY-MM or YYYY
-  source: LinkedIn                       # optional label
-  text: Wrote about evaluating LLM agents with golden datasets.
-  link: https://www.linkedin.com/posts/...
-  link_text: Read on LinkedIn            # optional, default "Read more"
-```
-
-Items are sorted newest first. LinkedIn has no public feed or API for personal posts that a static site can read, so LinkedIn posts cannot be pulled in automatically; paste the link here instead. While the list is empty the box says "No updates yet". Once it is taller than the box it scrolls slowly and loops, pauses on hover or keyboard focus, has a Pause button, and stays still for visitors who prefer reduced motion.
-
-### Write a blog post
-1. Create `_posts/YYYY-MM-DD-short-title.md`, for example `_posts/2026-11-15-evaluating-llm-agents.md`.
-2. Start it with front matter:
-   ```yaml
-   ---
-   title: Evaluating LLM agents with golden datasets
-   description: One or two sentences for the blog list and link previews.
-   tags: [llm, evaluation]
-   ---
-   ```
-3. Write the post in Markdown below that. Put images in `assets/img/blog/` and always add alt text: `![What the image shows](/assets/img/blog/diagram.png)`.
-4. Commit and push. The post appears at `/blog/YYYY/MM/DD/short-title/`, on the Blog page and in "Latest writing" on the home page.
-
-`AGENTS.md` has the same steps for AI coding agents, plus the content rules for this site.
-
-### Reading
-`_data/reading.yml` has three shelves:
-
-```yaml
-fiction:
-  - { title: The Secret of Secrets, author: Dan Brown, status: reading, year: 2025 }
-nonfiction:
-  - { title: Atomic Habits, author: James Clear, status: read, year: 2018 }
-articles:
-  - source: Jay Alammar
-    url: https://jalammar.github.io/
-    items:
-      - { title: The Illustrated Transformer, url: "https://jalammar.github.io/illustrated-transformer/", year: 2018 }
-```
-
-Book `status` is `reading`, `read` or `want`; each shelf groups books by status. Articles are grouped by source.
-
-### Update travel
-In `_data/travel.yml`, mark a US state as visited:
-
-```yaml
-  - { name: Colorado, visited: true, when: "2025", note: Rocky Mountain NP }
-```
-
-Visited states are highlighted on Life › Travel. For cities or countries outside that list, add entries under `places:` (name, country, lat, lon, when, note, optional photo with photo_alt). They appear as cards with pins on a world map.
-
-### Add Telugu phrases or notes
-Edit `_data/telugu.yml`. `phrases` and `notes` feed Life › Telugu. Each phrase has `te` (Telugu script), `rom` (romanization) and `en` (English gloss). Telugu text is marked `lang="te"` automatically.
-
-### Update the Experience page
-Each role in `_data/experience.yml` has a 1-3 sentence `summary` and a one-line `stack`. Keep it short; the PDF has the full resume.
-
-### Add the résumé PDF
-Export the PDF from Overleaf and save it as **`assets/gurunath-parasaram.pdf`**, replacing the one-page placeholder that is there now. The "PDF" button on Home and "Download PDF" on the Experience page already point to it.
-
-### X (Twitter) feed
-The handle is set in `_config.yml` (`twitter_handle: "guru__nath"`, without the `@`). Life › Feed then shows:
-
-1. **Selected posts** from `_data/x_posts.yml`. These show for every visitor. Paste a post's link (Share › Copy link on X) plus its date and text:
-   ```yaml
-   - url: https://x.com/guru__nath/status/1234567890123456789
-     date: 2026-11-02
-     text: Short copy of the post text.
-   ```
-   X's script turns each one into a full embedded post. If X is blocked, the text and link still show.
-2. **Latest posts**: X's official profile timeline, loaded automatically. It updates by itself, but X often shows it empty to visitors who are not signed in to X or who block X's cookies. When the script cannot load at all, a link to your profile appears instead.
-
-Fully automatic posts for every visitor would need the X API, which is pay-per-use (no free tier for new developers since 2026). A scheduled GitHub Action could fetch your latest posts into `_data/x_posts.yml` once a day using an API token stored as a repository secret.
-
-### Add or reorder pages (both modes)
-`_data/levels.yml` is the single list of pages. Plain mode builds its header nav (`nav: true`), the Life sub-nav and the Life cards (`parent: life`) from it, and game mode builds the quest map from the same list, so the two modes always show the same sections and content. Each page names its entry with `level: <id>` in its front matter. Icons are defined in `_includes/icon.html`.
-
-## Run it locally
+Preview locally:
 
 ```bash
 bundle install
@@ -124,13 +53,39 @@ bundle install
 bundle exec jekyll serve --livereload
 ```
 
-Then open http://localhost:4000. On Ruby 3+ the `webrick` gem in the `Gemfile` is needed for `serve`.
+Open http://localhost:4000 (add `?mode=game` to try game mode).
 
-## Deploying
-Push to `main`. GitHub Pages (Settings › Pages › "Deploy from a branch", `main`, `/ (root)`) builds and publishes the site in a minute or two. Only the plugins GitHub Pages supports are used: `jekyll-seo-tag`, `jekyll-sitemap` and `jekyll-redirect-from`. Old URLs (`/cv/`, `/resume/`, `/travel/`, `/contact/`, `/aboutme/`, `/posts/`) redirect to the new pages.
+Publish: push or merge to `main`. GitHub Pages (Settings › Pages › "Deploy from a branch", `main`, `/ (root)`) rebuilds the site in about a minute.
+
+## Backing up Claude settings
+| What | Where it lives | How it is backed up |
+| --- | --- | --- |
+| This repo's rules | `AGENTS.md`, `CLAUDE.md`, `docs/` | In git, on GitHub |
+| Your preferences for all projects | `~/.claude/CLAUDE.md` on each computer | Master copy at `docs/claude-user-CLAUDE.md` here; better, a private dotfiles repo (below) |
+| Claude Code settings, custom agents, commands, skills | `~/.claude/settings.json`, `~/.claude/agents/`, `~/.claude/commands/`, `~/.claude/skills/` | Private dotfiles repo |
+
+Keep `~/.claude` config in a private Git repo and link it into place on each computer:
+
+```bash
+mkdir -p ~/dotfiles/claude && cp ~/.claude/CLAUDE.md ~/.claude/settings.json ~/dotfiles/claude/
+```
+
+```bash
+ln -sf ~/dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md && ln -sf ~/dotfiles/claude/settings.json ~/.claude/settings.json
+```
+
+Commit `~/dotfiles` to a private GitHub repo. Never commit secrets (API keys, tokens, `.credentials.json`). Cloud sessions on claude.ai do not see `~/.claude` from your computer, so rules a repo must always follow belong in that repo's `AGENTS.md`/`CLAUDE.md`. For the claude.ai chat app, paste a short version of your preferences into Settings › Profile.
 
 ## Credits
-- Fonts from Google Fonts, all under the SIL Open Font License: [Fraunces](https://fonts.google.com/specimen/Fraunces), [Noto Sans Telugu](https://fonts.google.com/noto/specimen/Noto+Sans+Telugu) and [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P).
-- World map land outlines: [Natural Earth](https://www.naturalearthdata.com/) (public domain), via the [world-atlas](https://github.com/topojson/world-atlas) package (ISC), pre-rendered into `_includes/world-land-path.txt`.
+- Fonts from Google Fonts, under the SIL Open Font License: [Fraunces](https://fonts.google.com/specimen/Fraunces), [Noto Sans Telugu](https://fonts.google.com/noto/specimen/Noto+Sans+Telugu) and [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P).
+- World map outlines: [Natural Earth](https://www.naturalearthdata.com/) (public domain) via [world-atlas](https://github.com/topojson/world-atlas) (ISC), pre-rendered into `_includes/world-land-path.txt`.
 - Icons, the quest map and the avatar were drawn for this site.
-- Accessibility: semantic HTML, skip link, visible focus, keyboard-operable map (roving tabindex), `prefers-reduced-motion` support, and light and dark themes.
+
+## Changelog
+Site and docs history, newest first. PRs are in [GitHub](https://github.com/gurunathparasaram/gurunathparasaram.github.io/pulls?q=is%3Apr).
+- **2026-11-02** · Docs reorganized into README, `docs/`, `AGENTS.md` and `CLAUDE.md`; cross-project preferences file added.
+- **2026-11-02** · CV renamed Experience (`/experience/`); figures written in words; payment-integrity result credited to the program, with Gurunath leading its AI core (#6).
+- **2026-11-02** · X feed: live timeline loads automatically, plus hand-picked posts (#5). X handle set to `guru__nath` (#4).
+- **2026-11-02** · News fills from blog posts and manual items; one page list (`levels.yml`) drives both modes; Reading split into Fiction, Non-fiction and Technical articles (#3).
+- **2026-11-02** · Shorter experience entries; Telugu panel removed from Home; RSS and sample post removed; city references removed; Travel lists US states (#2).
+- **2026-11-01** · Redesign: new Jekyll site with plain and game modes, replacing the old theme fork and its leftover third-party content (#1).
