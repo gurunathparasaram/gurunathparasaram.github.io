@@ -289,7 +289,11 @@ html:not([data-mode="game"]) .game-only, .no-js .game-only { display: none !impo
 .note h3 { font-size: 1.1rem; }
 .note time { font: .85rem var(--font-body); margin-left: .4rem; }
 
-.feed-embed { margin-top: 1.5rem; max-width: 36rem; }
+.feed-embed { margin-top: 1rem; max-width: 36rem; }
+.feed-slot { min-height: 4rem; }
+.x-pick-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; max-width: 36rem; }
+.x-pick-list blockquote.twitter-tweet { margin: 0; padding: 1rem 1.25rem; background: var(--surface); border: 1px solid var(--line); border-left: 0; border-radius: var(--radius); color: var(--ink); }
+.x-pick-list blockquote p:last-child { margin: 0; font-size: .9rem; color: var(--muted); }
 .feed-fallback { background: var(--warm-soft); padding: .75rem 1rem; border-radius: 10px; }
 
 /* ---------- Footer ---------- */
